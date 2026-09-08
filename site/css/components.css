@@ -255,7 +255,7 @@
    six-column grid it replaces, despite carrying three more terms. */
 .terms__row{display:flex;flex-wrap:wrap;justify-content:flex-start;
   gap:var(--s2) var(--s5);padding:var(--s3) var(--s5)}
-.terms .mq{font-size:var(--t-3xs);letter-spacing:var(--tr-strip)}
+.terms .mq{font-size:var(--t-3xs);letter-spacing:var(--tr-strip);font-weight:500;color:var(--text)}
 
 /* ---------- vocabulary: the four stages as ruled rows ----------
    No spine. A hairline between stages, the numeral and label held on the
