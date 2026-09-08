@@ -385,6 +385,9 @@
 .build__item.is-on .build__title{font-weight:700}
 .build__item.is-on .build__no{color:var(--amber)}   /* amber, not --yellow: yellow fails on paper */
 
+/* The floor is per block, not global: these two carry different content and
+   a shared value leaves dead space under the shorter one. */
+.build--sf{--panel-min:150px}
 .build__detail{min-height:var(--panel-min)}
 .build__panel[hidden]{display:none}
 .build__panel:focus-visible{outline:2px solid var(--amber);outline-offset:6px}
