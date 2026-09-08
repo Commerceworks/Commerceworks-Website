@@ -87,9 +87,8 @@
 .ink h2,.ink h3,.ink h4{color:var(--ink)}
 .ink .label{color:var(--muted)}
 .ink .lead{color:var(--text)}
-.ink::before{
-  content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--yellow);
-}
+/* The full-width yellow rule at the top of this section is gone on
+   Virginia's instruction. It read as a page break rather than a divider. */
 .quote{font-size:var(--t-sub);font-weight:700;letter-spacing:var(--tr-head);line-height:1.18;
   max-width:22em;color:var(--ink)}
 .timeline{margin-top:var(--s8);border-top:1px solid var(--line)}
