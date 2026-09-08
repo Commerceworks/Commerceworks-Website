@@ -334,7 +334,8 @@
 .build{
   display:grid;grid-template-columns:var(--index-w) 1fr;
   column-gap:var(--build-gap);align-items:start;
-  max-width:var(--max-build);margin:var(--s8) 0 0;
+  margin:var(--s8) 0 0;   /* full page column: the brief's 1080 cap made this
+                             the only section narrower than the rest */
 }
 .build__index{display:flex;flex-direction:column;border-top:1px solid var(--line)}
 
