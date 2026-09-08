@@ -86,22 +86,24 @@
 .vocab span{color:var(--muted);font-size:var(--t-s)}
 
 /* ---------- ink panel ---------- */
-.ink{background:var(--ink);color:var(--white);position:relative;overflow:hidden}
-.ink h2,.ink h3,.ink h4{color:var(--white)}
-.ink .label{color:var(--muted2)}
-.ink .lead{color:var(--muted2)}
+/* Was a dark panel. Now on the page's own theme: paper ground, ink type,
+   hairlines rather than the dark-panel rules. Layout and content unchanged. */
+.ink{background:var(--paper);color:var(--text);position:relative;overflow:hidden}
+.ink h2,.ink h3,.ink h4{color:var(--ink)}
+.ink .label{color:var(--muted)}
+.ink .lead{color:var(--text)}
 .ink::before{
   content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--yellow);
 }
 .quote{font-size:var(--t-sub);font-weight:700;letter-spacing:var(--tr-head);line-height:1.18;
-  max-width:22em;color:var(--white)}
-.timeline{margin-top:var(--s8);border-top:1px solid var(--line-dark)}
+  max-width:22em;color:var(--ink)}
+.timeline{margin-top:var(--s8);border-top:1px solid var(--line)}
 .timeline li:last-child{border-bottom:0;padding-bottom:0}
 .timeline li{display:grid;grid-template-columns:110px 1fr;gap:var(--s5);
-  padding:var(--s5) 0;border-bottom:1px solid var(--line-dark);align-items:baseline}
-.timeline time{font-size:var(--t-xs);font-weight:800;letter-spacing:var(--tr-label);color:var(--yellow)}
-.timeline p{margin:0;color:var(--muted2);font-size:var(--t-sm);max-width:var(--prose-wide)}
-.timeline b{color:var(--white);font-weight:700}
+  padding:var(--s5) 0;border-bottom:1px solid var(--line);align-items:baseline}
+.timeline time{font-size:var(--t-xs);font-weight:800;letter-spacing:var(--tr-label);color:var(--amber2)}
+.timeline p{margin:0;color:var(--muted);font-size:var(--t-sm);max-width:var(--prose-wide)}
+.timeline b{color:var(--ink);font-weight:700}
 
 /* ---------- salesforce (small, deliberately) ---------- */
 /* No card here. Dropping the box also brought this section onto the same left
