@@ -4,8 +4,10 @@
    ============================================================ */
 
 /* ---------- scroll reveal ---------- */
-.js .rise{opacity:0;transform:translateY(14px);
-  transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+/* Slowed from .7s to 1.1s and the travel raised from 14px to 18px, on
+   Virginia's instruction: the headings should drop in rather than appear. */
+.js .rise{opacity:0;transform:translateY(18px);
+  transition:opacity 1.1s cubic-bezier(.2,.7,.3,1),transform 1.1s cubic-bezier(.2,.7,.3,1)}
 .js .rise.in{opacity:1;transform:none}
 .rise.d1{transition-delay:.08s} .rise.d2{transition-delay:.16s}
 .rise.d3{transition-delay:.24s} .rise.d4{transition-delay:.32s}
