@@ -93,7 +93,8 @@
   max-width:22em;color:var(--ink)}
 .timeline{margin-top:var(--s8);border-top:1px solid var(--line)}
 .timeline li:last-child{border-bottom:0;padding-bottom:0}
-.timeline li{display:grid;grid-template-columns:110px 1fr;gap:var(--s5);
+/* Column narrowed from 110px: "Phase one" needed the width, "01" does not. */
+.timeline li{display:grid;grid-template-columns:48px 1fr;gap:var(--s5);
   padding:var(--s5) 0;border-bottom:1px solid var(--line);align-items:baseline}
 .timeline time{font-size:var(--t-xs);font-weight:800;letter-spacing:var(--tr-label);color:var(--amber2)}
 .timeline p{margin:0;color:var(--muted);font-size:var(--t-sm);max-width:var(--prose-wide)}
