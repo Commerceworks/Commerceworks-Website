@@ -81,8 +81,8 @@
      component wants an eighth, the answer is almost always that it should use
      an existing one. The previous build had fourteen ad-hoc sizes between
      11.5 and 26px, which is drift, not a scale. */
-  --t-3xs:   10.5px;    /* the terms strip only, to fit 15 on two tight rows */
-  --dot-strip: 4px;    /* the strip's marker, smaller than the marquee's 6px */
+  --t-3xs:   11.5px;    /* the terms strip only, to fit 15 on two tight rows */
+  --rule-strip: 26px;  /* the fading handoff rule between strip terms */
   --t-2xs:   11.5px;   /* uppercase labels, pills */
   --t-xs:    13px;     /* captions, footnotes under a stat */
   --t-s:     14px;     /* nav, footer links, secondary detail */
