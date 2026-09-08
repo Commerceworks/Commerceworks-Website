@@ -264,9 +264,22 @@
 /* Separators are real flex items, not pseudo-elements, so space-between
    distributes them along with the terms. As absolutely-positioned pseudos
    they hugged the following word instead of sitting in the gap. */
-.terms .sep{flex:0 0 var(--rule-strip);height:1px;align-self:center;
+/* Pipeline with flanges: the connector is a length of pipe, which is the
+   right motif for a downstream business. Three strokes at the centre, the
+   pipe fading out at both ends so nothing hard runs into the words. */
+.terms .sep{
+  flex:0 0 var(--rule-strip);height:var(--flange-h);align-self:center;
   position:relative;top:var(--rule-drop);
-  background:linear-gradient(90deg,transparent,var(--line2),var(--line),var(--line2),transparent)}
+  background:
+    linear-gradient(var(--line),var(--line))
+      calc(50% - var(--flange-gap)) 50% / var(--hair) 100% no-repeat,
+    linear-gradient(var(--line),var(--line))
+      50% 50% / var(--hair) 100% no-repeat,
+    linear-gradient(var(--line),var(--line))
+      calc(50% + var(--flange-gap)) 50% / var(--hair) 100% no-repeat,
+    linear-gradient(90deg,transparent 0,var(--line) 16%,var(--line) 84%,transparent 100%)
+      50% 50% / 100% var(--hair) no-repeat;
+}
 
 /* ---------- vocabulary: the four stages as ruled rows ----------
    No spine. A hairline between stages, the numeral and label held on the
