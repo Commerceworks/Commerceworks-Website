@@ -95,21 +95,19 @@
 .aside{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);
   padding:var(--s7);display:grid;grid-template-columns:1fr 1fr;gap:var(--s7);align-items:center}
 .aside h3{font-size:var(--t-small)}
-.aside__stats{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5)}
-.aside__stats div{border-left:2px solid var(--yellow);padding-left:var(--s4)}
-.aside__stats b{display:block;font-size:var(--t-lg);font-weight:800;color:var(--ink);letter-spacing:var(--tr-head);line-height:1}
-.aside__stats span{font-size:var(--t-xs);color:var(--muted)}
+.aside__clients .clients__row{flex-direction:column;gap:var(--s4)}
+.aside__clients .clients__row li{border-left:2px solid var(--yellow);padding-left:var(--s4)}
 
 /* ---------- cta ---------- */
-.cta{background:var(--yellow);border-radius:var(--r-lg)}
+.cta{background:var(--paper2);border:1px solid var(--line2);border-radius:var(--r-lg)}
 .cta__in{padding:var(--s7) var(--s8);display:grid;grid-template-columns:1.35fr auto;
   gap:var(--s8);align-items:center}
 .cta h2{font-size:var(--t-sub);max-width:18em}
-.cta p{color:var(--ink3);margin:var(--s4) 0 0;font-size:var(--t-base);max-width:34em}
+.cta p{color:var(--text);margin:var(--s4) 0 0;font-size:var(--t-base);max-width:34em}
 .cta__act{display:flex;flex-direction:column;gap:var(--s3);align-items:stretch;justify-self:end}
 .cta__act .btn{justify-content:center}
 .cta .btn--dark{background:var(--ink);color:var(--white)}
-.cta .btn--line{border-color:var(--line-onyellow);color:var(--ink)}
+.cta .btn--line{border-color:var(--line);color:var(--ink)}
 
 /* ---------- footer ---------- */
 .foot{background:var(--ink2);color:var(--muted2);padding:var(--s8) 0 var(--s6);font-size:var(--t-s)}
@@ -226,7 +224,7 @@
 /* ---- The deck: straddles the hero's bottom edge ---- */
 .deck{
   position:relative; margin-top:calc(var(--deck-lift) * -1);
-  display:grid; grid-template-columns:minmax(260px,.85fr) 2fr;
+  display:grid; grid-template-columns:2fr minmax(280px,.85fr);
   background:var(--white); border:1px solid var(--line2);
   border-radius:var(--r-lg); box-shadow:var(--shadow); overflow:hidden;
 }
