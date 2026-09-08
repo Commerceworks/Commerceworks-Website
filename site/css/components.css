@@ -209,6 +209,9 @@
 
 .prose h2{font-size:var(--t-small);margin:var(--s7) 0 var(--s4)}
 .prose h2:first-child{margin-top:0}
+/* Sub-headings inside long prose. Global h3 is --t-sub, the same size as an h2 on
+   the homepage, which would flatten the two levels the legal page needs. */
+.prose h3{font-size:var(--t-md);line-height:1.25;margin:var(--s6) 0 var(--s2);color:var(--ink)}
 .prose p{max-width:var(--prose)}
 .prose ul{margin:0 0 var(--s5);padding-left:var(--s5);list-style:disc}
 .prose li{margin-bottom:var(--s2);color:var(--muted);max-width:var(--prose)}
