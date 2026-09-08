@@ -182,3 +182,87 @@
   background:var(--yellow);flex:none;position:relative;top:-2px}
 
 @media (max-width:1000px){ .offices,.values{grid-template-columns:1fr} }
+
+/* ================= HERO — the photographic band =================
+   Full-bleed dark ground with the type laid over it, which is the one thing
+   all three references do and our previous hero did not. The ground is a
+   drawn loading rack rather than a photograph: we don't own terminals, and
+   borrowed rig imagery would imply we do. */
+.hero{
+  position:relative;
+  min-height:var(--hero-h);
+  display:flex; align-items:flex-end;
+  padding:var(--s8) 0 calc(var(--deck-lift) + var(--s8));
+  background:
+    radial-gradient(120% 70% at 50% 100%, var(--dusk-glow) 0%, transparent 62%),
+    linear-gradient(180deg, var(--dusk-top) 0%, var(--dusk-mid) 52%, var(--dusk-low) 100%);
+  overflow:hidden;
+}
+/* The rack lives in the lower band only. Full-height it ran a grid straight
+   through the headline and made the type look boxed. */
+.hero__bg{position:absolute;inset:0;pointer-events:none}
+.hero__rack{position:absolute;left:0;right:0;bottom:0;width:100%;height:56%;
+  /* dissolve the top of the drawing so no line ever crosses the headline */
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,var(--mask) 38%,var(--mask) 100%);
+          mask-image:linear-gradient(180deg,transparent 0,var(--mask) 38%,var(--mask) 100%);}
+.hero__rack path{fill:none;stroke:var(--schematic);stroke-width:1.25;
+  vector-effect:non-scaling-stroke;stroke-linecap:round}
+.rack__far path{opacity:.42}
+.rack__ground{stroke:var(--schematic);opacity:.7}
+.rack__pipe{stroke:var(--schematic2);stroke-width:1.5;opacity:.8}
+.rack__pips circle{fill:var(--yellow)}
+
+.hero__in{position:relative}
+.hero__h{
+  color:var(--on-ink);
+  font-size:var(--t-hero); letter-spacing:var(--tr-hero);
+  font-weight:500;            /* light, per Vista — ours was 800 and shouting */
+  line-height:1.04; margin:var(--s5) 0 0; max-width:16em;
+}
+.hero__lead{color:var(--on-ink2);max-width:32em;margin-top:var(--s5)}
+.label--on-ink{color:var(--on-ink3)}
+.label--on-ink::before{background:var(--schematic2)}
+
+/* ---- The deck: straddles the hero's bottom edge ---- */
+.deck{
+  position:relative; margin-top:calc(var(--deck-lift) * -1);
+  display:grid; grid-template-columns:minmax(260px,.85fr) 2fr;
+  background:var(--white); border:1px solid var(--line2);
+  border-radius:var(--r-lg); box-shadow:var(--shadow); overflow:hidden;
+}
+.deck__cta{background:var(--yellow);padding:var(--s7) var(--s6);
+  display:flex;flex-direction:column;justify-content:center}
+.deck__kicker{
+  font-size:var(--t-2xs); text-transform:uppercase;
+  letter-spacing:var(--tr-label); color:var(--ink); opacity:.62;
+}
+.deck__cta p{
+  margin:var(--s3) 0 var(--s5); color:var(--ink);
+  font-size:var(--t-md); letter-spacing:var(--tr-tight); line-height:1.28;
+}
+.deck__facts{
+  display:grid; grid-template-columns:repeat(3,1fr); margin:0;
+  padding:var(--s7) var(--s6); gap:var(--s6); align-content:center;
+}
+.deck__facts dt{
+  font-size:var(--t-2xs); text-transform:uppercase;
+  letter-spacing:var(--tr-label); color:var(--muted); margin-bottom:var(--s2);
+}
+.deck__facts dd{margin:0;color:var(--text);font-size:var(--t-deck);line-height:1.45}
+
+/* ---- Clients: named quietly, no logo wall ---- */
+.clients{border-top:1px solid var(--line2);padding-top:var(--s6)}
+.clients__row{
+  list-style:none; margin:var(--s5) 0 0; padding:0;
+  display:flex; flex-wrap:wrap; gap:var(--s5) var(--s9);
+}
+.clients__row li{
+  color:var(--muted); font-size:var(--t-md);
+  letter-spacing:var(--tr-tight); font-weight:600;
+}
+
+@media(max-width:900px){
+  .deck{grid-template-columns:1fr}
+  .deck__facts{grid-template-columns:1fr;gap:var(--s5);padding:var(--s6)}
+  .hero{padding-bottom:calc(var(--deck-lift) + var(--s7))}
+}

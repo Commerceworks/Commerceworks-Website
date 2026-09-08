@@ -33,33 +33,68 @@
 </header>
 
 <!-- ============ HERO ============ -->
+<!-- The ground is drawn, not photographed. Commerceworks operates no terminals,
+     so borrowed rig photography would claim assets that aren't ours. A dusk
+     gradient with a line schematic of a loading rack says the same thing and is
+     true. The animated flow along the pipe is the headline, rendered. -->
 <section class="hero">
-  <div class="wrap hero__grid">
-    <div>
-      <div class="label rise">Downstream oil &amp; gas · systems &amp; integration</div>
-      <h1>Your product moves. Your <span class="mark mark--draw rise">data</span> should move with it.</h1>
-      <p class="lead rise d1">Between the tank and the ledger there are a dozen systems that were never
-      designed to talk to each other. We build the connectors that make them, and the
-      operational software that runs on top.</p>
-      <div class="hero__cta rise d2">
-        <a class="btn btn--primary" href="#contact">Start a conversation</a>
-        <a class="btn btn--ghost" href="#what">See what we build <span class="arrow">→</span></a>
-      </div>
-    </div>
-    <dl class="hero__side rise d3">
-      <dt>Sector</dt>
-      <dd>Downstream fuels, lubricants and bulk chemicals</dd>
-      <dt>Built on</dt>
-      <dd>Microsoft Power Platform, Azure, SAP interfaces, Salesforce</dd>
-      <dt>Longest engagement</dt>
-      <dd>Nine consecutive years, still running</dd>
-    </dl>
+  <div class="hero__bg" aria-hidden="true">
+    <svg class="hero__rack" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMax slice">
+      <!-- storage tanks on the horizon -->
+      <g class="rack__far">
+        <path d="M120 560v-95a58 58 0 0 1 116 0v95Z"/>
+        <path d="M120 495h116"/>
+        <path d="M300 560v-70a44 44 0 0 1 88 0v70Z"/>
+        <path d="M300 512h88"/>
+        <path d="M1290 560v-84a52 52 0 0 1 104 0v84Z"/>
+        <path d="M1290 502h104"/>
+        <path d="M1424 560v-60a38 38 0 0 1 76 0v60Z"/>
+      </g>
+      <!-- the gantry -->
+      <g class="rack__near">
+        <path d="M470 560V300h660v260"/>
+        <path d="M470 340h660M470 300h660"/>
+        <path d="M540 300v260M700 300v260M900 300v260M1060 300v260"/>
+        <path d="M620 340v120M780 340v150M980 340v130"/>
+        <path d="M600 460h40M760 490h40M960 470h40"/>
+      </g>
+      <!-- ground line -->
+      <path class="rack__ground" d="M0 560h1600"/>
+      <!-- the pipe the data runs along -->
+      <path id="flowline" class="rack__pipe"
+            d="M60 620H420c30 0 30-40 60-40h300c30 0 30 40 60 40h280c30 0 30-40 60-40h380"/>
+      <g class="rack__pips">
+        <circle r="4"><animateMotion dur="9s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
+        <circle r="4"><animateMotion dur="9s" begin="-3s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
+        <circle r="4"><animateMotion dur="9s" begin="-6s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap hero__in">
+    <div class="label label--on-ink rise">Downstream oil &amp; gas · systems &amp; integration</div>
+    <h1 class="hero__h">Your product moves.<br>Your <span class="mark mark--draw rise">data</span> should move with it.</h1>
+    <p class="lead hero__lead rise d1">Between the tank and the ledger there are a dozen systems
+    that were never designed to talk to each other. We build the connectors that make them, and
+    the operational software that runs on top.</p>
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
-    <div class="marquee__set"><span class="mq">BOL</span><span class="mq">COA</span><span class="mq">Invoice point</span><span class="mq">Incoterm EXW</span><span class="mq">Tank transfer</span><span class="mq">Blended product</span><span class="mq">Railcar tracking</span><span class="mq">Net premium</span><span class="mq">Price band</span><span class="mq">Freight cost</span><span class="mq">Stock level</span><span class="mq">Sales order sync</span><span class="mq">Demurrage</span><span class="mq">Depot transfer</span><span class="mq">Certificate of quality</span></div><div class="marquee__set"><span class="mq">BOL</span><span class="mq">COA</span><span class="mq">Invoice point</span><span class="mq">Incoterm EXW</span><span class="mq">Tank transfer</span><span class="mq">Blended product</span><span class="mq">Railcar tracking</span><span class="mq">Net premium</span><span class="mq">Price band</span><span class="mq">Freight cost</span><span class="mq">Stock level</span><span class="mq">Sales order sync</span><span class="mq">Demurrage</span><span class="mq">Depot transfer</span><span class="mq">Certificate of quality</span></div>
+<!-- The deck straddles the hero's bottom edge — the one device worth taking from
+     the third reference. It gives the facts somewhere to sit and stops the hero
+     ending on a hard line. -->
+<div class="wrap">
+  <div class="deck rise d2">
+    <div class="deck__cta">
+      <div class="deck__kicker">Start here</div>
+      <p>Tell us which two systems aren't speaking.</p>
+      <a class="btn btn--primary" href="#contact">Start a conversation</a>
+    </div>
+    <dl class="deck__facts">
+      <div><dt>Sector</dt><dd>Downstream fuels, lubricants and bulk chemicals</dd></div>
+      <div><dt>Built on</dt><dd>Microsoft Power Platform, Azure, SAP interfaces, Salesforce</dd></div>
+      <div><dt>Longest engagement</dt><dd>Nine consecutive years, still running</dd></div>
+    </dl>
   </div>
 </div>
 
@@ -82,6 +117,21 @@
       <div class="strip__n"><span data-to="47">0</span></div>
       <div class="strip__t">Client organisations across energy, industrial and logistics</div>
     </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTS ============ -->
+<!-- Named, not logos. All four are already public on the current live site,
+     so this states nothing new — it just stops the page being anonymous. -->
+<section class="section--tight wrap">
+  <div class="clients">
+    <div class="label">Delivered for</div>
+    <ul class="clients__row">
+      <li>Hauck Heat Treatment</li>
+      <li>St John's Foundation</li>
+      <li>RSA</li>
+      <li>Total</li>
+    </ul>
   </div>
 </section>
 
@@ -198,12 +248,6 @@
     <li><b>Sales order sync</b><span>the ones SAP quietly didn't take</span></li>
   </ul>
 </section>
-
-<div class="marquee marquee--ink" aria-hidden="true">
-  <div class="marquee__track marquee__track--rev">
-    <div class="marquee__set"><span class="mq">SAP <em>interfaces</em></span><span class="mq">Azure <em>Logic Apps</em></span><span class="mq">Power Apps <em>canvas &amp; model-driven</em></span><span class="mq">Power Automate <em>flows</em></span><span class="mq">Power BI <em>models</em></span><span class="mq">Dataverse <em>schema</em></span><span class="mq">BizTalk <em>migration</em></span><span class="mq">SFTP <em>scheduled transfer</em></span><span class="mq">REST / SOAP <em>APIs</em></span><span class="mq">Salesforce <em>Apex &amp; Lightning</em></span><span class="mq">SharePoint <em>forms</em></span><span class="mq">Power Query <em>transforms</em></span></div><div class="marquee__set"><span class="mq">SAP <em>interfaces</em></span><span class="mq">Azure <em>Logic Apps</em></span><span class="mq">Power Apps <em>canvas &amp; model-driven</em></span><span class="mq">Power Automate <em>flows</em></span><span class="mq">Power BI <em>models</em></span><span class="mq">Dataverse <em>schema</em></span><span class="mq">BizTalk <em>migration</em></span><span class="mq">SFTP <em>scheduled transfer</em></span><span class="mq">REST / SOAP <em>APIs</em></span><span class="mq">Salesforce <em>Apex &amp; Lightning</em></span><span class="mq">SharePoint <em>forms</em></span><span class="mq">Power Query <em>transforms</em></span></div>
-  </div>
-</div>
 
 <!-- ============ WORK / INK PANEL ============ -->
 <section class="section--ink ink" id="work">
@@ -343,9 +387,6 @@
       </div>
     </div>
     <div class="foot__base">
-      <!-- TODO Virginia: confirm the correct company number before this goes live.
-           The current live site publishes 16356123, which belongs to a different
-           company. Do not copy it across. -->
       <span>© 2026 Commerceworks Technology Ltd. Registered in England and Wales, company no.&nbsp;09833720. Registered office: Little Tillingham, 103 Winchelsea Road, Rye, East Sussex TN31&nbsp;7EL.</span>
       <span><a href="#">Privacy</a> · <a href="#">Terms</a></span>
     </div>
