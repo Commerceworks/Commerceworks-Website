@@ -5,6 +5,8 @@
 }
 .bar__in{display:flex;align-items:center;gap:var(--s6);height:70px}
 .brand{font-weight:800;font-size:var(--t-md);letter-spacing:var(--tr-tight);color:var(--ink);display:flex;align-items:center;gap:9px}
+.brand--mark{gap:0}
+.brand--mark img{height:var(--logo-h);width:auto;display:block}
 .brand__dot{width:9px;height:9px;background:var(--yellow);border-radius:var(--circle);flex:none}
 .brand span{font-weight:500;color:var(--muted)}
 .nav{display:flex;gap:var(--s6);margin-left:auto}
@@ -45,10 +47,10 @@
 /* ---------- proof strip ---------- */
 .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--white)}
 .strip__in{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.strip__cell{padding:var(--s6) var(--s5);border-right:1px solid var(--line2)}
+.strip__cell{padding:var(--s4) var(--s5);border-right:1px solid var(--line2)}
 .strip__cell:last-child{border-right:0}
 .strip__n{font-size:var(--t-stat);font-weight:800;color:var(--ink);letter-spacing:var(--tr-head);line-height:1}
-.strip__n em{font-style:normal;color:var(--amber)}
+.strip__n em{font-style:normal;color:var(--amber);margin-left:.22em}
 .strip__t{margin-top:var(--s2);font-size:var(--t-xs);color:var(--muted);line-height:1.45}
 
 /* ---------- editorial two-column ---------- */
@@ -224,7 +226,7 @@
 /* ---- The deck: straddles the hero's bottom edge ---- */
 .deck{
   position:relative; margin-top:calc(var(--deck-lift) * -1);
-  display:grid; grid-template-columns:2fr minmax(280px,.85fr);
+  display:grid; grid-template-columns:1fr;
   background:var(--white); border:1px solid var(--line2);
   border-radius:var(--r-lg); box-shadow:var(--shadow); overflow:hidden;
 }
@@ -241,12 +243,21 @@
 .deck__facts{
   display:grid; grid-template-columns:repeat(3,1fr); margin:0;
   padding:var(--s7) var(--s6); gap:var(--s6); align-content:center;
+
 }
 .deck__facts dt{
   font-size:var(--t-2xs); text-transform:uppercase;
   letter-spacing:var(--tr-label); color:var(--muted); margin-bottom:var(--s2);
 }
 .deck__facts dd{margin:0;color:var(--text);font-size:var(--t-deck);line-height:1.45}
+
+/* Deck as a right-hand list — no yellow panel. The facts stack and sit
+   against the right edge rather than spanning the full card. */
+.deck--list{margin-left:auto;max-width:640px}
+.deck--list .deck__facts{grid-template-columns:1fr;gap:var(--s5);padding:var(--s6) var(--s7)}
+.deck--list .deck__facts>div{display:grid;grid-template-columns:minmax(150px,auto) 1fr;
+  gap:var(--s5);align-items:baseline}
+.deck--list .deck__facts dt{margin-bottom:0}
 
 /* ---- Clients: named quietly, no logo wall ---- */
 .clients{border-top:1px solid var(--line2);padding-top:var(--s6)}

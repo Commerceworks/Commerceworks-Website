@@ -68,7 +68,8 @@
   --on-ink:      rgba(255,255,255,.94);
   --on-ink2:     rgba(255,255,255,.62);
   --on-ink3:     rgba(255,255,255,.40);
-  --deck-lift:   96px;                  /* how far the deck straddles the hero */
+  --deck-lift:   96px;
+  --logo-h:      42px;                  /* how far the deck straddles the hero */
   --t-deck:      clamp(15px, 1.05vw, 17px);
 
   /* Spacing scale */
@@ -88,7 +89,7 @@
   --t-base-s:15.5px;     /* body below 640px */
   --t-md:    18px;     /* h4, brand wordmark */
   --t-lg:    22px;     /* stat numerals in the aside */
-  --t-stat:  clamp(26px, 2.1vw, 32px);   /* the proof-strip numerals */
+  --t-stat:  clamp(21px, 1.6vw, 25px);   /* the proof-strip numerals */
 
   /* Fluid type — the house clamp() scale, unchanged */
   --t-hero:  clamp(36px, 3.6vw, 56px);
