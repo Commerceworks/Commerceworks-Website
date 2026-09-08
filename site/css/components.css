@@ -228,8 +228,7 @@
   line-height:1.04; margin:var(--s5) 0 0; max-width:16em;
 }
 .hero__lead{color:var(--on-ink2);max-width:32em;margin-top:var(--s5)}
-.label--on-ink{color:var(--on-ink3)}
-.label--on-ink::before{background:var(--schematic2)}
+.label--on-ink{color:var(--on-ink3)}   /* dash stays full yellow, as everywhere else */
 
 /* ---- Clients: named quietly, no logo wall ---- */
 .clients{border-top:1px solid var(--line2);padding-top:var(--s6)}

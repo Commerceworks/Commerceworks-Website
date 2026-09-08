@@ -28,7 +28,7 @@ img{max-width:100%;display:block}
 
 /* Small wide-tracked label, the counterweight to the tight headlines */
 .label{
-  font-size:var(--t-2xs);font-weight:700;text-transform:uppercase;
+  font-size:var(--t-xs);font-weight:700;text-transform:uppercase;
   letter-spacing:var(--tr-label);color:var(--muted);
   display:flex;align-items:center;gap:var(--s3);margin-bottom:var(--s5);
 }
