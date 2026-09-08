@@ -256,7 +256,11 @@
 .terms__row{display:flex;flex-wrap:wrap;justify-content:space-between;
   gap:var(--s2) var(--s5);padding:var(--s3) var(--s5)}
 .terms .brk{flex:0 0 100%;height:0;margin:0}   /* forces the row break before Depot transfer */
-.terms .mq{font-size:var(--t-3xs);letter-spacing:var(--tr-strip);font-weight:500;color:var(--text)}
+.terms .mq{font-size:var(--t-3xs);letter-spacing:var(--tr-strip);
+  font-weight:500;color:var(--text);gap:var(--s2)}
+/* The 6px marker and 12px gap were adding as much visual weight as the type
+   itself at this size, so both come down with it. */
+.terms .mq::before{width:var(--dot-strip);height:var(--dot-strip)}
 
 /* ---------- vocabulary: the four stages as ruled rows ----------
    No spine. A hairline between stages, the numeral and label held on the
