@@ -104,8 +104,8 @@
 .timeline b{color:var(--white);font-weight:700}
 
 /* ---------- salesforce (small, deliberately) ---------- */
-.aside{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);
-  padding:var(--s7)}
+/* No card here. Dropping the box also brought this section onto the same left
+   edge as every other one: its padding was what held the label 45px inboard. */
 .aside h3{font-size:var(--t-small)}
 
 /* Skills as one quiet run of text between hairlines, rather than a wall of
