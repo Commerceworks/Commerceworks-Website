@@ -1,4 +1,4 @@
-/* Motion behaviours. Progressive enhancement only — if this file fails to load
+/* Motion behaviours. Progressive enhancement only. If this file fails to load
    the page still reads, still navigates and still converts. */
 (function () {
   'use strict';

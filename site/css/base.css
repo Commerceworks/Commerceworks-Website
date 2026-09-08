@@ -26,7 +26,7 @@ img{max-width:100%;display:block}
 .section--tight{padding:var(--s8) 0}
 .rule{height:1px;background:var(--line);border:0;margin:0}
 
-/* Small wide-tracked label — the counterweight to the tight headlines */
+/* Small wide-tracked label, the counterweight to the tight headlines */
 .label{
   font-size:var(--t-2xs);font-weight:700;text-transform:uppercase;
   letter-spacing:var(--tr-label);color:var(--muted);
@@ -40,7 +40,7 @@ img{max-width:100%;display:block}
 .muted{color:var(--muted)}
 
 /* The yellow marker. Sits BEHIND the word at 42% height so the ink stays
-   fully legible — colour in the text, not a block around it. */
+   fully legible: colour in the text, not a block around it. */
 .mark{
   position:relative;display:inline-block;z-index:0;
   background:linear-gradient(to top,var(--yellow) 0,var(--yellow) 42%,transparent 42%);

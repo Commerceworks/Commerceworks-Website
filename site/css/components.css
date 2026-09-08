@@ -190,7 +190,7 @@
 
 @media (max-width:1000px){ .offices,.values{grid-template-columns:1fr} }
 
-/* ================= HERO — the photographic band =================
+/* ================= HERO: the photographic band =================
    Full-bleed dark ground with the type laid over it, which is the one thing
    all three references do and our previous hero did not. The ground is a
    drawn loading rack rather than a photograph: we don't own terminals, and
@@ -223,7 +223,7 @@
 .hero__h{
   color:var(--on-ink);
   font-size:var(--t-hero); letter-spacing:var(--tr-hero);
-  font-weight:500;            /* light, per Vista — ours was 800 and shouting */
+  font-weight:500;            /* light, per Vista, ours was 800 and shouting */
   line-height:1.04; margin:var(--s5) 0 0; max-width:16em;
 }
 .hero__lead{color:var(--on-ink2);max-width:32em;margin-top:var(--s5)}

@@ -1,8 +1,8 @@
-/* Commerceworks — design tokens.
+/* Commerceworks design tokens.
    THE RULE: no colour, size or radius literal anywhere outside this file.
    If a # appears in base.css or components.css, a token is missing here. */
 :root{
-  /* Inks — a warm near-black, not navy and not grey. This is the departure
+  /* Inks: a warm near-black, not navy and not grey. This is the departure
      from the ByzGen navy system and it is what stops the two looking related. */
   --ink:      #14120c;
   --ink2:     #1e1b13;
@@ -11,7 +11,7 @@
   --muted:    #7b7365;
   --muted2:   #a49b8b;
 
-  /* Grounds — warm white, so the yellow reads as daylight rather than hazard */
+  /* Grounds: warm white, so the yellow reads as daylight rather than hazard */
   --paper:    #fdfbf5;
   --paper2:   #f7f3e8;
   --white:    #ffffff;
@@ -91,7 +91,7 @@
   --t-lg:    22px;     /* stat numerals in the aside */
   --t-stat:  clamp(21px, 1.6vw, 25px);   /* the proof-strip numerals */
 
-  /* Fluid type — the house clamp() scale, unchanged */
+  /* Fluid type: the house clamp() scale, unchanged */
   --t-hero:  clamp(36px, 3.6vw, 56px);
   --t-page:  clamp(28px, 2.6vw, 40px);
   --t-sub:   clamp(21px, 1.9vw, 28px);
