@@ -81,4 +81,85 @@
     });
   }
 
+  /* ---- what we build: index and detail ---------------------------------
+     Tabs at desktop, accordion below 980px. Selection is by CLICK only.
+     The index sits directly in the reading path, so hover-switching would
+     fire every time the cursor crossed it on the way somewhere else.     */
+  (function () {
+    var root = document.querySelector('.build');
+    if (!root) return;
+    var tabs   = [].slice.call(root.querySelectorAll('.build__item'));
+    var panels = [].slice.call(root.querySelectorAll('.build__panel'));
+    if (!tabs.length) return;
+    var list = root.querySelector('.build__index');
+    var wide = window.matchMedia('(min-width: 980px)');
+    var open = 0;
+
+    function paint() {
+      var tabsMode = wide.matches;
+      tabs.forEach(function (t, i) {
+        var on = tabsMode ? i === open : i === open;
+        t.classList.toggle('is-on', on);
+        if (tabsMode) {
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+          t.removeAttribute('aria-expanded');
+          t.tabIndex = on ? 0 : -1;
+        } else {
+          t.setAttribute('aria-expanded', on ? 'true' : 'false');
+          t.removeAttribute('aria-selected');
+          t.tabIndex = 0;
+        }
+        panels[i].hidden = !on;
+      });
+    }
+
+    function mode() {
+      var tabsMode = wide.matches;
+      /* In accordion mode the tab roles no longer describe the widget. */
+      if (tabsMode) {
+        list.setAttribute('role', 'tablist');
+        list.setAttribute('aria-orientation', 'vertical');
+        tabs.forEach(function (t, i) {
+          t.setAttribute('role', 'tab');
+          panels[i].setAttribute('role', 'tabpanel');
+        });
+        if (open < 0) open = 0;            /* tabs always have one selected */
+      } else {
+        list.removeAttribute('role');
+        list.removeAttribute('aria-orientation');
+        tabs.forEach(function (t, i) {
+          t.removeAttribute('role');
+          panels[i].removeAttribute('role');
+        });
+      }
+      paint();
+    }
+
+    function select(i, focus) {
+      /* accordion allows everything closed; tabs do not */
+      open = (!wide.matches && i === open) ? -1 : i;
+      paint();
+      if (focus && tabs[i]) tabs[i].focus();
+    }
+
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(i, false); });
+      t.addEventListener('keydown', function (e) {
+        if (!wide.matches) return;         /* arrows are a tabs behaviour */
+        var n = null;
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+        else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') n = 0;
+        else if (e.key === 'End') n = tabs.length - 1;
+        if (n === null) return;
+        e.preventDefault();
+        select(n, true);
+      });
+    });
+
+    if (wide.addEventListener) wide.addEventListener('change', mode);
+    else if (wide.addListener) wide.addListener(mode);
+    mode();
+  })();
+
 })();

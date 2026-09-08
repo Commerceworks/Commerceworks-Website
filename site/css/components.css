@@ -312,5 +312,68 @@
   .vgroup__no,.vgroup__t,.vgroup__sub,.vlist{grid-area:auto}
   .vlist{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
   .vlist li + li::before{display:none}   /* stacked: the arrows would point nowhere */
-}   /* stacked: the arrows would point nowhere */
+}
+
+/* ================= WHAT WE BUILD: index and detail =================
+   Replaces the 2x2 card grid. All four panels are in the HTML at render
+   time and toggled with the hidden attribute, so crawlers and no-JS
+   visitors get all four, not one.
+
+   Brief supplied its own hexes sampled off the design. Deliberately NOT
+   used: they were near-duplicates of house tokens and would have put a
+   second yellow, a second ink and a second grey into the system. Mapped
+   onto the real tokens instead, noted in the reply. */
+.build{
+  display:grid;grid-template-columns:var(--index-w) 1fr;
+  column-gap:var(--build-gap);align-items:start;
+  max-width:var(--max-build);margin:var(--s8) 0 0;
+}
+.build__index{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+
+.build__item{
+  display:flex;align-items:baseline;gap:14px;width:100%;
+  background:none;border:0;border-bottom:1px solid var(--line);
+  padding:var(--s4) var(--s1);text-align:left;cursor:pointer;
+  font:inherit;color:var(--muted2);
+  transition:color .15s ease,padding-left .15s ease;
+}
+.build__no{font-size:var(--t-2xs);font-weight:700;letter-spacing:var(--tr-label2);flex:none}
+.build__title{font-size:var(--t-sm);font-weight:600;letter-spacing:var(--tr-tight)}
+.build__item:hover{color:var(--ink);padding-left:var(--indent)}
+.build__item:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.build__item.is-on{color:var(--ink);padding-left:var(--indent)}
+.build__item.is-on .build__title{font-weight:700}
+.build__item.is-on .build__no{color:var(--amber)}   /* amber, not --yellow: yellow fails on paper */
+
+.build__detail{min-height:var(--panel-min)}
+.build__panel[hidden]{display:none}
+.build__panel:focus-visible{outline:2px solid var(--amber);outline-offset:6px}
+.build__panel h3{margin:0}
+.build__panel p{color:var(--muted);font-size:var(--t-sm);line-height:1.7;
+  max-width:var(--prose);margin:var(--s4) 0 0}
+.badge{display:inline-block;margin-bottom:var(--s4);
+  font-size:var(--t-2xs);font-weight:700;text-transform:uppercase;
+  letter-spacing:var(--tr-label);color:var(--amber2);
+  background:var(--wash);padding:5px 10px;border-radius:var(--pill)}
+.chips{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s5)}
+.chip{font-size:var(--t-xs);color:var(--muted);background:var(--paper2);
+  border-radius:var(--r-xs);padding:6px 11px}
+
+/* Accordion below 980px. display:contents lets the buttons and panels
+   become grid items of .build so each panel can sit under its own button,
+   without moving anything in the DOM. JS drops the tab roles at this
+   breakpoint, so the flattened containers carry no orphaned semantics. */
+@media(max-width:979px){
+  .build{grid-template-columns:1fr;column-gap:0}
+  .build__index,.build__detail{display:contents}
+  .build__index{border-top:0}
+  .build__item:nth-child(1){grid-row:1} .build__panel:nth-child(1){grid-row:2}
+  .build__item:nth-child(2){grid-row:3} .build__panel:nth-child(2){grid-row:4}
+  .build__item:nth-child(3){grid-row:5} .build__panel:nth-child(3){grid-row:6}
+  .build__item:nth-child(4){grid-row:7} .build__panel:nth-child(4){grid-row:8}
+  .build__item{border-top:1px solid var(--line);border-bottom:0}
+  .build__panel{padding:0 var(--s1) var(--s6)}
+  .build__panel h3{display:none}   /* the header button already carries the title */
+  .build__panel p{margin-top:var(--s4)}
+  .build__detail{min-height:0}
 }
