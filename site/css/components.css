@@ -195,7 +195,9 @@
 /* Interior page heads now match the homepage: same heading size, same body
    size, and no white band. The white background and the larger --t-page /
    --t-lead sizes made About and Contact read as a different site. */
-.pagehead{border-bottom:1px solid var(--line);padding:var(--s8) 0 var(--s7)}
+/* No bottom rule. The white band is gone, so the line had nothing to close
+   off and read as a page break. Space does the separating. */
+.pagehead{padding:var(--s8) 0 var(--s7)}
 .pagehead h1{font-size:var(--t-sub);max-width:14em}
 .pagehead .lead{margin-top:var(--s4);max-width:var(--prose);
   font-size:var(--t-base);line-height:1.65}
