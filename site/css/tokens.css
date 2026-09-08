@@ -37,6 +37,7 @@
   --build-gap:56px;
   --panel-min:221px;   /* tallest is now 04; re-measured after the section went full width */
   --indent:   8px;     /* hover and selected shift on the index */
+  --clientlbl:112px;   /* the CHARITIES / COMMERCIAL label column */
   --prose:    720px;
   --prose-wide: 900px;
 
