@@ -29,7 +29,7 @@
 
 /* ---------- hero ---------- */
 .hero{padding:var(--s9) 0 var(--s8);position:relative;overflow:hidden}
-.hero__grid{display:grid;grid-template-columns:1.5fr .5fr;gap:var(--s8);align-items:end}
+.hero__grid{display:grid;grid-template-columns:1.45fr .55fr;gap:var(--s8);align-items:end}
 .hero h1{max-width:16em}
 .hero .lead{max-width:32em;margin-top:var(--s5)}
 .hero__cta{display:flex;gap:var(--s3);margin-top:var(--s7);flex-wrap:wrap}
@@ -41,7 +41,10 @@
 }
 .hero__side{border-left:2px solid var(--yellow);padding-left:var(--s5)}
 .hero__side dt{font-size:var(--t-2xs);font-weight:700;text-transform:uppercase;letter-spacing:var(--tr-label);color:var(--muted)}
-.hero__side dd{margin:var(--s1) 0 var(--s5);font-size:var(--t-sm);font-weight:600;color:var(--ink);letter-spacing:var(--tr-tight)}
+.hero__side dd{margin:var(--s1) 0 var(--s5);font-size:var(--t-sm);font-weight:600;color:var(--on-ink);letter-spacing:var(--tr-tight)}
+.hero__side dt{color:var(--on-ink3)}
+.btn--on-ink{border-color:var(--line-dark);color:var(--on-ink)}
+.btn--on-ink:hover{border-color:var(--schematic2);color:var(--white)}
 .hero__side dd:last-child{margin-bottom:0}
 
 /* ---------- proof strip ---------- */
@@ -195,8 +198,8 @@
 .hero{
   position:relative;
   min-height:var(--hero-h);
-  display:flex; align-items:flex-end;
-  padding:var(--s8) 0 calc(var(--deck-lift) + var(--s8));
+  display:flex; align-items:center;
+  padding:var(--s9) 0 var(--s9);
   background:
     radial-gradient(120% 70% at 50% 100%, var(--dusk-glow) 0%, transparent 62%),
     linear-gradient(180deg, var(--dusk-top) 0%, var(--dusk-mid) 52%, var(--dusk-low) 100%);
@@ -227,42 +230,6 @@
 .label--on-ink{color:var(--on-ink3)}
 .label--on-ink::before{background:var(--schematic2)}
 
-/* ---- The deck: straddles the hero's bottom edge ---- */
-.deck{
-  position:relative; margin-top:calc(var(--deck-lift) * -1);
-  display:grid; grid-template-columns:1fr;
-  background:var(--white); border:1px solid var(--line2);
-  border-radius:var(--r-lg); box-shadow:var(--shadow); overflow:hidden;
-}
-.deck__cta{background:var(--yellow);padding:var(--s7) var(--s6);
-  display:flex;flex-direction:column;justify-content:center}
-.deck__kicker{
-  font-size:var(--t-2xs); text-transform:uppercase;
-  letter-spacing:var(--tr-label); color:var(--ink); opacity:.62;
-}
-.deck__cta p{
-  margin:var(--s3) 0 var(--s5); color:var(--ink);
-  font-size:var(--t-md); letter-spacing:var(--tr-tight); line-height:1.28;
-}
-.deck__facts{
-  display:grid; grid-template-columns:repeat(3,1fr); margin:0;
-  padding:var(--s7) var(--s6); gap:var(--s6); align-content:center;
-
-}
-.deck__facts dt{
-  font-size:var(--t-2xs); text-transform:uppercase;
-  letter-spacing:var(--tr-label); color:var(--muted); margin-bottom:var(--s2);
-}
-.deck__facts dd{margin:0;color:var(--text);font-size:var(--t-deck);line-height:1.45}
-
-/* Deck as a right-hand list — no yellow panel. The facts stack and sit
-   against the right edge rather than spanning the full card. */
-.deck--list{margin-left:auto;max-width:640px}
-.deck--list .deck__facts{grid-template-columns:1fr;gap:var(--s5);padding:var(--s6) var(--s7)}
-.deck--list .deck__facts>div{display:grid;grid-template-columns:minmax(150px,auto) 1fr;
-  gap:var(--s5);align-items:baseline}
-.deck--list .deck__facts dt{margin-bottom:0}
-
 /* ---- Clients: named quietly, no logo wall ---- */
 .clients{border-top:1px solid var(--line2);padding-top:var(--s6)}
 .clients__row{
@@ -274,8 +241,4 @@
   letter-spacing:var(--tr-tight); font-weight:600;
 }
 
-@media(max-width:900px){
-  .deck{grid-template-columns:1fr}
-  .deck__facts{grid-template-columns:1fr;gap:var(--s5);padding:var(--s6)}
-  .hero{padding-bottom:calc(var(--deck-lift) + var(--s7))}
-}
+
