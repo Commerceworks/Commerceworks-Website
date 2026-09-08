@@ -61,9 +61,11 @@
       <!-- ground line -->
       <path class="rack__ground" d="M0 560h1600"/>
       <!-- the pipe the data runs along -->
-      <!-- Straight, deliberately. The earlier S-curve made the dots bob
-           vertically as they travelled, which reads as a wobble. -->
-      <path id="flowline" class="rack__pipe" d="M0 600H1600"/>
+      <!-- Humps restored, but at 16 units instead of 40. On screen that is
+           about 9px of rise against the original 22px, and over 16s rather
+           than 9s, so the dots read as gently undulating rather than lurching. -->
+      <path id="flowline" class="rack__pipe"
+            d="M60 620H420c30 0 30-16 60-16h300c30 0 30 16 60 16h280c30 0 30-16 60-16h380"/>
       <g class="rack__pips">
         <circle r="4"><animateMotion dur="16s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
         <circle r="4"><animateMotion dur="16s" begin="-5.33s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
