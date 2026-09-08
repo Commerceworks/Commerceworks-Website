@@ -57,7 +57,10 @@
 .strip__t{margin-top:var(--s2);font-size:var(--t-xs);color:var(--muted);line-height:1.45}
 
 /* ---------- editorial two-column ---------- */
-.split{display:grid;grid-template-columns:.72fr 1.28fr;gap:var(--s8)}
+/* Same column and gutter as the What we build index, via the same tokens,
+   so the two sections line up on one page grid rather than two. */
+.split{display:grid;grid-template-columns:var(--index-w) 1fr;
+  column-gap:var(--build-gap);row-gap:var(--s8)}
 .split h2{max-width:11em}
 
 /* ---------- capability cards ---------- */
