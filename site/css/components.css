@@ -197,8 +197,13 @@
    --t-lead sizes made About and Contact read as a different site. */
 /* No bottom rule. The white band is gone, so the line had nothing to close
    off and read as a page break. Space does the separating. */
-.pagehead{padding:var(--s8) 0 var(--s7)}
-.pagehead h1{font-size:var(--t-sub);max-width:14em}
+.pagehead{padding:var(--s8) 0 var(--s6)}
+/* No measure cap. At 14em the Contact heading broke over two lines; these
+   headings are short enough to sit on one. */
+.pagehead h1{font-size:var(--t-sub);max-width:none}
+/* The head no longer carries a rule or a colour change, so the old 100px
+   gap read as a hole. Pull what follows up. */
+.pagehead + .section--tight{padding-top:var(--s5)}
 .pagehead .lead{margin-top:var(--s4);max-width:var(--prose);
   font-size:var(--t-base);line-height:1.65}
 
