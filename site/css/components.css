@@ -147,3 +147,38 @@
 .split--top{align-items:start}
 .split--top > div:first-child{position:sticky;top:110px}
 @media (max-width:1000px){ .split--top > div:first-child{position:static} }
+
+/* ---------- interior pages ---------- */
+.pagehead{border-bottom:1px solid var(--line);padding:var(--s8) 0 var(--s7);background:var(--white)}
+.pagehead h1{font-size:var(--t-page);max-width:14em}
+.pagehead .lead{margin-top:var(--s4);max-width:var(--prose)}
+
+.prose h2{font-size:var(--t-small);margin:var(--s7) 0 var(--s4)}
+.prose h2:first-child{margin-top:0}
+.prose p{max-width:var(--prose)}
+.prose ul{margin:0 0 var(--s5);padding-left:var(--s5);list-style:disc}
+.prose li{margin-bottom:var(--s2);color:var(--muted);max-width:var(--prose)}
+.prose li strong{color:var(--ink)}
+
+/* ---------- offices ---------- */
+.offices{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s6);margin-top:var(--s7)}
+.office{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:var(--s6);border-top:3px solid var(--yellow)}
+.office h3{font-size:var(--t-md);margin-bottom:var(--s2)}
+.office .co{font-size:var(--t-sm);font-weight:700;color:var(--ink);margin-bottom:var(--s3)}
+.office address{font-style:normal;color:var(--muted);font-size:var(--t-sm);margin-bottom:var(--s5)}
+.office dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:var(--s2) var(--s4);align-items:baseline}
+.office dt{font-size:var(--t-2xs);font-weight:700;text-transform:uppercase;
+  letter-spacing:var(--tr-label);color:var(--muted)}
+.office dd{margin:0;font-size:var(--t-sm);font-weight:600;letter-spacing:var(--tr-tight)}
+.office dd a{color:var(--ink)}
+.office dd a:hover{color:var(--amber)}
+
+/* ---------- values list ---------- */
+.values{display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--s7);margin-top:var(--s6)}
+.values li{display:flex;gap:var(--s3);padding:var(--s4) 0;border-bottom:1px solid var(--line2);
+  font-size:var(--t-sm);color:var(--text);align-items:baseline}
+.values li::before{content:"";width:6px;height:6px;border-radius:var(--circle);
+  background:var(--yellow);flex:none;position:relative;top:-2px}
+
+@media (max-width:1000px){ .offices,.values{grid-template-columns:1fr} }
