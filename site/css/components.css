@@ -272,7 +272,8 @@
 .vlist li{padding:0;border:0;position:relative}
 /* Arrow sits in the gap before every term but the first, so each row reads
    as a sequence of steps rather than a set of unrelated items. */
-.vlist li + li::before{content:"\2192";position:absolute;left:calc(var(--s5) * -0.72);
+.vlist li + li::before{content:"\2192";position:absolute;
+  left:calc(var(--s5) * -1);width:var(--s5);text-align:center;
   top:0;color:var(--muted2);font-size:var(--t-sm);line-height:1.25}
 .vlist b{display:block;font-weight:700;color:var(--ink);
   letter-spacing:var(--tr-tight);font-size:var(--t-sm)}
