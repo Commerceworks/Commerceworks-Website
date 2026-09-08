@@ -19,8 +19,8 @@
   <div class="wrap bar__in">
     <a class="brand brand--mark" href="/"><img src="images/commerceworks-logo.png" alt="Commerceworks, Connecting Systems" width="475" height="101"></a>
     <nav class="nav">
-      <a href="#what">What we build</a>
       <a href="#domain">Domain</a>
+      <a href="#what">What we build</a>
       <a href="#work">Work</a>
       <a href="#salesforce">Salesforce</a>
       <a href="/about">About</a>
@@ -144,46 +144,40 @@
   </div>
 </section>
 
-<hr class="rule">
-
-<!-- ============ WHAT WE BUILD ============ -->
-<section class="section wrap" id="what">
-  <div class="prose-wide">
-    <div class="label rise">What we build</div>
-    <h2 class="rise d1">Four things done properly, for a long time.</h2>
-  </div>
-  <div class="build">
-    <div class="build__index" role="tablist" aria-orientation="vertical" aria-label="What we build">
-      <button class="build__item is-on" type="button" role="tab" id="wb-t1" aria-selected="true" aria-controls="wb-p1" tabindex="0"><span class="build__no">01</span><span class="build__title">Connectors and interfaces</span></button>
-      <button class="build__item" type="button" role="tab" id="wb-t2" aria-selected="false" aria-controls="wb-p2" tabindex="-1"><span class="build__no">02</span><span class="build__title">Operational apps on Power Platform</span></button>
-      <button class="build__item" type="button" role="tab" id="wb-t3" aria-selected="false" aria-controls="wb-p3" tabindex="-1"><span class="build__no">03</span><span class="build__title">Reporting that survives an audit</span></button>
-      <button class="build__item" type="button" role="tab" id="wb-t4" aria-selected="false" aria-controls="wb-p4" tabindex="-1"><span class="build__no">04</span><span class="build__title">Order to invoice, end to end</span></button>
-    </div>
-    <div class="build__detail">
-      <div class="build__panel" role="tabpanel" id="wb-p1" aria-labelledby="wb-t1" tabindex="0">
-        <h3>Connectors and interfaces</h3>
-        <p>Moving records between systems that have no intention of cooperating: SAP sales orders and invoice types, carrier and partner interfaces, scheduled file exchange, and the unglamorous work of making a transform survive a format change at the other end. We have migrated BizTalk installations onto Logic Apps and lived with the result.</p>
-        <div class="chips"><span class="chip">SAP interfaces</span><span class="chip">Azure Logic Apps</span><span class="chip">BizTalk migration</span><span class="chip">SFTP &amp; file transfer</span><span class="chip">REST / SOAP APIs</span><span class="chip">Dataflows</span></div>
+<!-- The diagram of the gap, sitting with the gap it describes. -->
+<section class="section--tight wrap">
+    <div class="pipe rise">
+      <div class="label">How a movement becomes money</div>
+      <div class="pipe__track">
+        <div class="pipe__line">
+          <i class="pipe__flow"></i><i class="pipe__flow"></i>
+          <i class="pipe__flow"></i><i class="pipe__flow"></i>
+        </div>
+      <div class="node">
+        <div class="node__dot">01</div>
+        <b>Terminal</b><span>Load lifted, BOL raised</span>
       </div>
-      <div class="build__panel" role="tabpanel" id="wb-p2" aria-labelledby="wb-t2" tabindex="0" hidden>
-        <h3>Operational apps on Power Platform</h3>
-        <p>Where the ERP stops, this starts. Freight cost capture with rail and road rates against quotes. Tank and product configuration. Order forms that field staff will actually use. Reconciliation between two sides of the same movement. Built as canvas and model-driven apps with Power Automate behind them, so your own team can keep them alive.</p>
-        <div class="chips"><span class="chip">Power Apps</span><span class="chip">Power Automate</span><span class="chip">Dataverse</span><span class="chip">SharePoint</span><span class="chip">Freight cost</span><span class="chip">Reconciliation</span></div>
+      <div class="node">
+        <div class="node__dot">02</div>
+        <b>Interface</b><span>Transform, validate, retry</span>
       </div>
-      <div class="build__panel" role="tabpanel" id="wb-p3" aria-labelledby="wb-t3" tabindex="0" hidden>
-        <h3>Reporting that survives an audit</h3>
-        <p>Railcar and fleet utilisation. Procurement. Inventory and stock levels by tank. Hedging and net premium. Freight reconciliation. Power BI models built on the actual transaction data rather than a monthly extract, which is the difference between a report you argue about and one you act on.</p>
-        <div class="chips"><span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">Inventory &amp; stock</span><span class="chip">Rail &amp; fleet</span><span class="chip">Hedging / net premium</span></div>
+      <div class="node">
+        <div class="node__dot">03</div>
+        <b>ERP / SAP</b><span>Sales order, contract price</span>
       </div>
-      <div class="build__panel" role="tabpanel" id="wb-p4" aria-labelledby="wb-t4" tabindex="0" hidden>
-        <span class="badge">Where the money leaks</span>
-        <h3>Order to invoice, end to end</h3>
-        <p>Contract pricing and price bands, price lists that change mid-month, incoterm-driven documentation, invoice point logic, blended product on a single order, tank transfers between depots. This is where the money actually leaks, and it is the part generalist integrators consistently underestimate.</p>
-        <div class="chips"><span class="chip">Contract pricing</span><span class="chip">Price bands</span><span class="chip">Invoice point</span><span class="chip">Incoterms</span><span class="chip">Documentation</span></div>
+      <div class="node">
+        <div class="node__dot">04</div>
+        <b>Operations</b><span>Freight cost, reconciliation</span>
+      </div>
+      <div class="node">
+        <div class="node__dot">05</div>
+        <b>Invoice</b><span>Right price, right incoterm</span>
+      </div>
       </div>
     </div>
-  </div>
 </section>
+
+<hr class="rule">
 
 <!-- ============ DOMAIN VOCABULARY ============ -->
 <section class="section--tight wrap" id="domain">
@@ -241,39 +235,49 @@
   </div>
 </section>
 
+<!-- ============ WHAT WE BUILD ============ -->
+<section class="section wrap" id="what">
+  <div class="prose-wide">
+    <div class="label rise">What we build</div>
+    <h2 class="rise d1">Four things done properly, for a long time.</h2>
+  </div>
+  <div class="build">
+    <div class="build__index" role="tablist" aria-orientation="vertical" aria-label="What we build">
+      <button class="build__item is-on" type="button" role="tab" id="wb-t1" aria-selected="true" aria-controls="wb-p1" tabindex="0"><span class="build__no">01</span><span class="build__title">Connectors and interfaces</span></button>
+      <button class="build__item" type="button" role="tab" id="wb-t2" aria-selected="false" aria-controls="wb-p2" tabindex="-1"><span class="build__no">02</span><span class="build__title">Operational apps on Power Platform</span></button>
+      <button class="build__item" type="button" role="tab" id="wb-t3" aria-selected="false" aria-controls="wb-p3" tabindex="-1"><span class="build__no">03</span><span class="build__title">Reporting that survives an audit</span></button>
+      <button class="build__item" type="button" role="tab" id="wb-t4" aria-selected="false" aria-controls="wb-p4" tabindex="-1"><span class="build__no">04</span><span class="build__title">Order to invoice, end to end</span></button>
+    </div>
+    <div class="build__detail">
+      <div class="build__panel" role="tabpanel" id="wb-p1" aria-labelledby="wb-t1" tabindex="0">
+        <h3>Connectors and interfaces</h3>
+        <p>Moving records between systems that have no intention of cooperating: SAP sales orders and invoice types, carrier and partner interfaces, scheduled file exchange, and the unglamorous work of making a transform survive a format change at the other end. We have migrated BizTalk installations onto Logic Apps and lived with the result.</p>
+        <div class="chips"><span class="chip">SAP interfaces</span><span class="chip">Azure Logic Apps</span><span class="chip">BizTalk migration</span><span class="chip">SFTP &amp; file transfer</span><span class="chip">REST / SOAP APIs</span><span class="chip">Dataflows</span></div>
+      </div>
+      <div class="build__panel" role="tabpanel" id="wb-p2" aria-labelledby="wb-t2" tabindex="0" hidden>
+        <h3>Operational apps on Power Platform</h3>
+        <p>Where the ERP stops, this starts. Freight cost capture with rail and road rates against quotes. Tank and product configuration. Order forms that field staff will actually use. Reconciliation between two sides of the same movement. Built as canvas and model-driven apps with Power Automate behind them, so your own team can keep them alive.</p>
+        <div class="chips"><span class="chip">Power Apps</span><span class="chip">Power Automate</span><span class="chip">Dataverse</span><span class="chip">SharePoint</span><span class="chip">Freight cost</span><span class="chip">Reconciliation</span></div>
+      </div>
+      <div class="build__panel" role="tabpanel" id="wb-p3" aria-labelledby="wb-t3" tabindex="0" hidden>
+        <h3>Reporting that survives an audit</h3>
+        <p>Railcar and fleet utilisation. Procurement. Inventory and stock levels by tank. Hedging and net premium. Freight reconciliation. Power BI models built on the actual transaction data rather than a monthly extract, which is the difference between a report you argue about and one you act on.</p>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip">Power Query</span><span class="chip">Inventory &amp; stock</span><span class="chip">Rail &amp; fleet</span><span class="chip">Hedging / net premium</span></div>
+      </div>
+      <div class="build__panel" role="tabpanel" id="wb-p4" aria-labelledby="wb-t4" tabindex="0" hidden>
+        <span class="badge">Where the money leaks</span>
+        <h3>Order to invoice, end to end</h3>
+        <p>Contract pricing and price bands, price lists that change mid-month, incoterm-driven documentation, invoice point logic, blended product on a single order, tank transfers between depots. This is where the money actually leaks, and it is the part generalist integrators consistently underestimate.</p>
+        <div class="chips"><span class="chip">Contract pricing</span><span class="chip">Price bands</span><span class="chip">Invoice point</span><span class="chip">Incoterms</span><span class="chip">Documentation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ WORK / INK PANEL ============ -->
 <section class="section--ink ink" id="work">
   <div class="wrap">
 
-    <div class="pipe rise">
-      <div class="label">How a movement becomes money</div>
-      <div class="pipe__track">
-        <div class="pipe__line">
-          <i class="pipe__flow"></i><i class="pipe__flow"></i>
-          <i class="pipe__flow"></i><i class="pipe__flow"></i>
-        </div>
-      <div class="node">
-        <div class="node__dot">01</div>
-        <b>Terminal</b><span>Load lifted, BOL raised</span>
-      </div>
-      <div class="node">
-        <div class="node__dot">02</div>
-        <b>Interface</b><span>Transform, validate, retry</span>
-      </div>
-      <div class="node">
-        <div class="node__dot">03</div>
-        <b>ERP / SAP</b><span>Sales order, contract price</span>
-      </div>
-      <div class="node">
-        <div class="node__dot">04</div>
-        <b>Operations</b><span>Freight cost, reconciliation</span>
-      </div>
-      <div class="node">
-        <div class="node__dot">05</div>
-        <b>Invoice</b><span>Right price, right incoterm</span>
-      </div>
-      </div>
-    </div>
     <div class="stack">
       <div>
         <div class="label rise">How the work runs</div>
