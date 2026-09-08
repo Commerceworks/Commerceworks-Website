@@ -14,11 +14,19 @@ out.parent.mkdir(exist_ok=True)
 
 html = src.read_text()
 
+def inline_font_urls(css):
+    def sub(m):
+        fname = m.group(1)
+        data = (root / "site" / "assets" / fname).read_bytes()
+        return "url(data:font/woff2;base64,%s)" % base64.b64encode(data).decode()
+    return re.sub(r'url\(\.\./assets/([^)]+\.woff2)\)', sub, css)
+
 def inline_css(m):
     href = m.group(1)
     if href.startswith("http"):
         return m.group(0)                      # leave the font CDN alone
     css = (root / "site" / href).read_text()
+    css = inline_font_urls(css)
     return "<style>\n/* ---- %s ---- */\n%s\n</style>" % (href, css)
 
 def inline_js(m):
@@ -53,17 +61,35 @@ def font_face():
     return ("<style>\n/* Manrope, SIL OFL 1.1, embedded so this file works offline */\n"
             + "\n".join(faces) + "\n</style>")
 
-# drop the Google Fonts links and the preconnects entirely
+# The fonts are self-hosted now, so there is no Google link to swap out. Drop
+# the preload (it points at a path that will not exist beside a single file)
+# and rewrite the relative woff2 URLs inside the inlined CSS to base64 instead.
 html = re.sub(r'<link rel="preconnect"[^>]*>\s*', '', html)
-html = re.sub(r'<link href="https://fonts\.googleapis[^>]*>', font_face(), html)
+html = re.sub(r'<link rel="preload"[^>]*\.woff2[^>]*>\s*', '', html)
+
 
 html = re.sub(r'<link rel="stylesheet" href="([^"]+)">', inline_css, html)
 html = re.sub(r'<script src="([^"]+)"[^>]*></script>', inline_js, html)
 
+# The logo and favicon would be dead links beside a lone file, so they go in
+# as base64 too. After this the document needs nothing from the network.
+def inline_img(m):
+    attr, path = m.group(1), m.group(2)
+    if path.startswith(("http", "data:")):
+        return m.group(0)
+    f = root / "site" / path
+    if not f.exists():
+        return m.group(0)
+    mime = "image/png" if path.endswith(".png") else "image/x-icon"
+    b64 = base64.b64encode(f.read_bytes()).decode()
+    return '%s="data:%s;base64,%s"' % (attr, mime, b64)
+
+html = re.sub(r'(src|href)="((?:images|assets)/[^"]+)"', inline_img, html)
+
 stamp = datetime.date.today().isoformat()
 html = html.replace("</head>",
   '<meta name="robots" content="noindex,nofollow">\n'
-  '<!-- Self-contained preview built %s from branch design/oil-gas-fancy.\n'
+  '<!-- Self-contained preview built %s from branch hero.\n'
   '     Draft. Company number, client naming and contact details are placeholders. -->\n'
   '</head>' % stamp)
 
