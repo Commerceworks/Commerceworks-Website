@@ -36,7 +36,7 @@
   --max-build:1080px;  /* the index-and-detail section runs narrower than the page */
   --index-w:  300px;
   --build-gap:56px;
-  --panel-min:248px;   /* the tallest panel is 01 at 247px, not 02: measured, not assumed */
+  --panel-min:242px;   /* tallest panel is 01; re-measured after the h3 came down */
   --indent:   8px;     /* hover and selected shift on the index */
   --prose:    720px;
   --prose-wide: 900px;

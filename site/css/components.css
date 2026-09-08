@@ -348,15 +348,15 @@
 .build__detail{min-height:var(--panel-min)}
 .build__panel[hidden]{display:none}
 .build__panel:focus-visible{outline:2px solid var(--amber);outline-offset:6px}
-.build__panel h3{margin:0}
-.build__panel p{color:var(--muted);font-size:var(--t-sm);line-height:1.7;
+.build__panel h3{margin:0;font-size:var(--t-lg)}
+.build__panel p{color:var(--text);font-size:var(--t-sm);line-height:1.7;
   max-width:var(--prose);margin:var(--s4) 0 0}
 .badge{display:inline-block;margin-bottom:var(--s4);
   font-size:var(--t-2xs);font-weight:700;text-transform:uppercase;
   letter-spacing:var(--tr-label);color:var(--amber2);
   background:var(--wash);padding:5px 10px;border-radius:var(--pill)}
 .chips{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s5)}
-.chip{font-size:var(--t-xs);color:var(--muted);background:var(--paper2);
+.chip{font-size:var(--t-xs);color:var(--strip-ink);background:var(--paper2);
   border-radius:var(--r-xs);padding:6px 11px}
 
 /* Accordion below 980px. display:contents lets the buttons and panels
