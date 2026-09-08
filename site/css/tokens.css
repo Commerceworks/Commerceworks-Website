@@ -81,6 +81,7 @@
      component wants an eighth, the answer is almost always that it should use
      an existing one. The previous build had fourteen ad-hoc sizes between
      11.5 and 26px, which is drift, not a scale. */
+  --t-3xs:   10.5px;   /* the terms strip only, to fit 15 on two rows */
   --t-2xs:   11.5px;   /* uppercase labels, pills */
   --t-xs:    13px;     /* captions, footnotes under a stat */
   --t-s:     14px;     /* nav, footer links, secondary detail */
@@ -104,6 +105,7 @@
   --tr-hero:  -.032em;   /* hero only */
   --tr-head:  -.024em;    /* section heads, large numerals */
   --tr-tight: -.02em;    /* mid-size UI type: brand, node labels, buttons */
+  --tr-strip: .07em;     /* the strip runs tighter than the house label */
   --tr-label: .11em;     /* small uppercase labels */
   --tr-label2:.10em;     /* the tighter of the two house label values */
   --tr-wider: .17em;     /* hover-expanded labels only */
