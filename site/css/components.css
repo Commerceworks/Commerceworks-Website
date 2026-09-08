@@ -254,14 +254,35 @@
 @media(max-width:1000px){.terms__row{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.terms__row{grid-template-columns:repeat(2,1fr)}}
 
-/* ---------- vocabulary, grouped into the four stages ---------- */
-.vgroups{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s7);margin-top:var(--s8)}
-.vgroup__no{font-size:var(--t-2xs);font-weight:800;color:var(--amber);letter-spacing:var(--tr-label)}
-.vgroup__t{margin:var(--s3) 0 var(--s1)}
-.vgroup__sub{margin:0;color:var(--muted);font-size:var(--t-s);font-style:italic}
-.vlist{list-style:none;margin:var(--s5) 0 0;padding:0}
-.vlist li{padding:var(--s3) 0;border-top:1px solid var(--line2)}
-.vlist b{display:block;font-weight:700;color:var(--ink);letter-spacing:var(--tr-tight);font-size:var(--t-sm)}
-.vlist span{display:block;margin-top:2px;color:var(--muted);font-size:var(--t-xs);line-height:1.45}
-@media(max-width:1000px){.vgroups{grid-template-columns:repeat(2,1fr);gap:var(--s6)}}
-@media(max-width:640px){.vgroups{grid-template-columns:1fr}}
+/* ---------- vocabulary: the four stages, on a flow rail ----------
+   The spine with numbered nodes is what makes it read as a sequence rather
+   than four unrelated blocks. auto-fit on the term grid means the shorter
+   stages spread across the row instead of leaving a ragged gap on the right. */
+.vgroups{display:grid;grid-template-columns:1fr;gap:0;margin-top:var(--s7);position:relative}
+.vgroups::before{content:"";position:absolute;left:17px;top:var(--s6);bottom:var(--s6);
+  width:2px;background:var(--line)}
+.vgroup{display:grid;grid-template-columns:36px 190px 1fr;
+  grid-template-rows:auto auto auto;column-gap:var(--s6);
+  padding:var(--s6) 0;position:relative}
+.vgroup__no{grid-area:1/1/4/2;align-self:start;
+  width:36px;height:36px;border-radius:var(--circle);
+  background:var(--paper);border:2px solid var(--yellow);
+  color:var(--ink);font-size:var(--t-2xs);font-weight:800;letter-spacing:var(--tr-label2);
+  display:grid;place-items:center;z-index:1}
+.vgroup__t{grid-area:1/2/2/3;margin:0}
+.vgroup__sub{grid-area:2/2/3/3;margin:var(--s1) 0 0;
+  color:var(--muted);font-size:var(--t-s);font-style:italic}
+.vlist{grid-area:1/3/4/4;align-self:start;list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:var(--s5)}
+.vlist li{padding:0;border:0}
+.vlist b{display:block;font-weight:700;color:var(--ink);
+  letter-spacing:var(--tr-tight);font-size:var(--t-sm)}
+.vlist span{display:block;margin-top:3px;color:var(--muted);
+  font-size:var(--t-xs);line-height:1.45}
+@media(max-width:900px){
+  .vgroup{grid-template-columns:36px 1fr;row-gap:var(--s4)}
+  .vgroup__no{grid-area:1/1/2/2}
+  .vgroup__t{grid-area:1/2/2/3}
+  .vgroup__sub{grid-area:2/2/3/3}
+  .vlist{grid-area:3/2/4/3;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+}
