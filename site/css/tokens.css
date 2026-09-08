@@ -106,7 +106,7 @@
   --t-stat:  clamp(21px, 1.6vw, 25px);   /* the proof-strip numerals */
 
   /* Fluid type: the house clamp() scale, unchanged */
-  --t-hero:  clamp(25px, 2.3vw, 36px);
+  --t-hero:  clamp(25px, 2.3vw, 36px);   /* unused on the homepage: .hero__h matches --t-sub */
   --t-page:  clamp(28px, 2.6vw, 40px);
   --t-sub:   clamp(21px, 1.9vw, 28px);
   --t-small: clamp(20px, 1.7vw, 25px);
