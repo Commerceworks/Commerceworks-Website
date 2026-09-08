@@ -119,8 +119,19 @@
    other, so the block stays compact and fills the card. */
 .aside__clients{margin-top:var(--s7)}
 .cgroups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s7);margin-top:var(--s5)}
-.cgroup h4{font-size:var(--t-2xs);font-weight:700;text-transform:uppercase;
-  letter-spacing:var(--tr-label);color:var(--muted);margin:0}
+.cgroup summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;gap:var(--s3);
+  font-size:var(--t-2xs);font-weight:700;text-transform:uppercase;
+  letter-spacing:var(--tr-label);color:var(--muted);
+  padding-bottom:var(--s3);border-bottom:1px solid var(--line);
+  transition:color .15s ease}
+.cgroup summary::-webkit-details-marker{display:none}
+.cgroup summary::after{content:"";width:6px;height:6px;margin-left:auto;
+  border-right:1px solid var(--muted);border-bottom:1px solid var(--muted);
+  transform:rotate(45deg) translateY(-2px);transition:transform .18s ease}
+.cgroup[open] summary::after{transform:rotate(225deg) translateY(-2px)}
+.cgroup summary:hover,.cgroup[open] summary{color:var(--ink)}
+.cgroup__n{font-weight:600;color:var(--amber)}
 .cgroup ul{list-style:none;margin:var(--s4) 0 0;padding:0;display:grid;gap:var(--s3)}
 .cgroup li{color:var(--ink);font-size:var(--t-sm);font-weight:600;
   letter-spacing:var(--tr-tight);border-left:2px solid var(--yellow);padding-left:var(--s4)}

@@ -162,4 +162,26 @@
     mode();
   })();
 
+  /* ---- customers: open on hover for mice, click/tap and keyboard for all ---
+     <details> already handles click, touch and keyboard on its own. This only
+     adds hover for devices that actually have a pointer, so touch users are
+     never left with names they cannot reveal.                              */
+  (function () {
+    var groups = [].slice.call(document.querySelectorAll('.cgroup'));
+    if (!groups.length) return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    groups.forEach(function (d) {
+      var held = false;                       /* a real click pins it open */
+      d.addEventListener('pointerenter', function () { if (!held) d.open = true; });
+      d.addEventListener('pointerleave', function () { if (!held) d.open = false; });
+      d.addEventListener('toggle', function () { if (!d.open) held = false; });
+      d.querySelector('summary').addEventListener('click', function (e) {
+        /* Clicking something hover has already opened should PIN it, not
+           close it. Only a click on an already-pinned group closes it. */
+        if (d.open && !held) { e.preventDefault(); held = true; }
+        else { held = !d.open; }
+      });
+    });
+  })();
+
 })();
