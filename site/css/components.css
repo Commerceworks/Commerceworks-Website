@@ -104,7 +104,8 @@
 .aside{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);
   padding:var(--s7);display:grid;grid-template-columns:1fr 1fr;gap:var(--s7);align-items:center}
 .aside h3{font-size:var(--t-small)}
-.aside__clients .clients__row{flex-direction:column;gap:var(--s4)}
+.aside__clients .clients__row{flex-direction:column;gap:var(--s3);margin-top:var(--s4)}
+.label--gap{margin-top:var(--s6)}
 .aside__clients .clients__row li{border-left:2px solid var(--yellow);padding-left:var(--s4)}
 
 /* ---------- cta ---------- */
@@ -237,7 +238,7 @@
   display:flex; flex-wrap:wrap; gap:var(--s5) var(--s9);
 }
 .clients__row li{
-  color:var(--muted); font-size:var(--t-md);
+  color:var(--muted); font-size:var(--t-sm);
   letter-spacing:var(--tr-tight); font-weight:600;
 }
 

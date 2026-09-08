@@ -92,7 +92,7 @@
   --t-stat:  clamp(21px, 1.6vw, 25px);   /* the proof-strip numerals */
 
   /* Fluid type: the house clamp() scale, unchanged */
-  --t-hero:  clamp(36px, 3.6vw, 56px);
+  --t-hero:  clamp(29px, 2.8vw, 44px);
   --t-page:  clamp(28px, 2.6vw, 40px);
   --t-sub:   clamp(21px, 1.9vw, 28px);
   --t-small: clamp(20px, 1.7vw, 25px);
