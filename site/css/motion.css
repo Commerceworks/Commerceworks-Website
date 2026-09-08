@@ -160,3 +160,9 @@
   .node__dot{margin:0}
   .node span{padding:0}
 }
+
+/* Motion sickness guard. SVG animateMotion is not covered by the CSS
+   reduced-motion query, so the dots have to be hidden explicitly. */
+@media (prefers-reduced-motion: reduce){
+  .rack__pips{display:none}
+}

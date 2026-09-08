@@ -61,12 +61,13 @@
       <!-- ground line -->
       <path class="rack__ground" d="M0 560h1600"/>
       <!-- the pipe the data runs along -->
-      <path id="flowline" class="rack__pipe"
-            d="M60 620H420c30 0 30-40 60-40h300c30 0 30 40 60 40h280c30 0 30-40 60-40h380"/>
+      <!-- Straight, deliberately. The earlier S-curve made the dots bob
+           vertically as they travelled, which reads as a wobble. -->
+      <path id="flowline" class="rack__pipe" d="M0 600H1600"/>
       <g class="rack__pips">
-        <circle r="4"><animateMotion dur="9s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
-        <circle r="4"><animateMotion dur="9s" begin="-3s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
-        <circle r="4"><animateMotion dur="9s" begin="-6s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
+        <circle r="4"><animateMotion dur="16s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
+        <circle r="4"><animateMotion dur="16s" begin="-5.33s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
+        <circle r="4"><animateMotion dur="16s" begin="-10.66s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
       </g>
     </svg>
   </div>
