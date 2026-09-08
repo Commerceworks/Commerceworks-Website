@@ -108,7 +108,9 @@
    the proof behind everything above them, so they sit at the end of the section
    rather than competing with it. */
 .clients-run{margin-top:var(--s8)}
-.clients-run .skills{margin-top:var(--s4)}
+/* One group, not two, so it takes a single column rather than stretching a
+   five-name list across the full width. */
+.cgroups--one{grid-template-columns:minmax(0,var(--index-w))}
 
 /* Customers, grouped. Two columns side by side rather than one after the
    other, so the block stays compact and fills the card. */
