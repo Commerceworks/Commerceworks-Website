@@ -85,9 +85,7 @@
      Tabs at desktop, accordion below 980px. Selection is by CLICK only.
      The index sits directly in the reading path, so hover-switching would
      fire every time the cursor crossed it on the way somewhere else.     */
-  (function () {
-    var root = document.querySelector('.build');
-    if (!root) return;
+  [].slice.call(document.querySelectorAll('.build')).forEach(function (root) {
     var tabs   = [].slice.call(root.querySelectorAll('.build__item'));
     var panels = [].slice.call(root.querySelectorAll('.build__panel'));
     if (!tabs.length) return;
@@ -160,7 +158,7 @@
     if (wide.addEventListener) wide.addEventListener('change', mode);
     else if (wide.addListener) wide.addListener(mode);
     mode();
-  })();
+  });
 
   /* ---- customers: open on hover for mice, click/tap and keyboard for all ---
      <details> already handles click, touch and keyboard on its own. This only
