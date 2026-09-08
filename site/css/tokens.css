@@ -85,6 +85,8 @@
   --rule-strip: 56px;  /* the fading handoff rule; wider pulls the terms closer */
   --rule-drop:  1px;   /* optical centring against the text */
   --hair:       1px;   /* the pipe and its flange strokes */
+  --strip-ink:  #534b41;              /* between --muted and --text: darker without bolding */
+  --strip-line: rgba(20,18,12,.20);   /* the pipe, to match */
   --flange-h:   9px;   /* flange height */
   --flange-gap: 5px;   /* spacing between the three flanges */
   --t-2xs:   11.5px;   /* uppercase labels, pills */

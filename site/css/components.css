@@ -256,7 +256,7 @@
   gap:var(--s2) var(--s4);padding:var(--s3) var(--s5)}
 .terms .brk{flex:0 0 100%;height:0;margin:0}   /* forces the row break before Depot transfer */
 .terms .mq{font-size:var(--t-3xs);letter-spacing:var(--tr-strip);
-  font-weight:500;color:var(--muted);gap:0;position:relative}
+  font-weight:500;color:var(--strip-ink);gap:0;position:relative}
 /* A fading rule between terms instead of a dot on each: a soft handoff,
    so nothing hard touches the words. Sits in the gap, so it costs no
    layout space and cannot force a term onto another line. */
@@ -271,13 +271,13 @@
   flex:0 0 var(--rule-strip);height:var(--flange-h);align-self:center;
   position:relative;top:var(--rule-drop);
   background:
-    linear-gradient(var(--line),var(--line))
+    linear-gradient(var(--strip-line),var(--strip-line))
       calc(50% - var(--flange-gap)) 50% / var(--hair) 100% no-repeat,
-    linear-gradient(var(--line),var(--line))
+    linear-gradient(var(--strip-line),var(--strip-line))
       50% 50% / var(--hair) 100% no-repeat,
-    linear-gradient(var(--line),var(--line))
+    linear-gradient(var(--strip-line),var(--strip-line))
       calc(50% + var(--flange-gap)) 50% / var(--hair) 100% no-repeat,
-    linear-gradient(90deg,transparent 0,var(--line) 16%,var(--line) 84%,transparent 100%)
+    linear-gradient(90deg,transparent 0,var(--strip-line) 16%,var(--strip-line) 84%,transparent 100%)
       50% 50% / 100% var(--hair) no-repeat;
 }
 
