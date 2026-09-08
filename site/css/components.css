@@ -107,6 +107,11 @@
 /* The oil and gas names, set as a quiet run rather than a logo wall. They are
    the proof behind everything above them, so they sit at the end of the section
    rather than competing with it. */
+/* The gap section and its diagram read as one unit, so the usual 76px section
+   break between them is cut back. */
+#problem{padding-bottom:var(--s7)}
+.diagram{padding-top:0}
+
 .clients-run{margin-top:var(--s8)}
 /* One group, not two, so it takes a single column rather than stretching a
    five-name list across the full width. */
