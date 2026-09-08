@@ -69,7 +69,7 @@
   --on-ink2:     rgba(255,255,255,.62);
   --on-ink3:     rgba(255,255,255,.40);
   --deck-lift:   96px;
-  --logo-h:      42px;                  /* how far the deck straddles the hero */
+  --logo-h:      52px;                  /* how far the deck straddles the hero */
   --t-deck:      clamp(15px, 1.05vw, 17px);
 
   /* Spacing scale */
