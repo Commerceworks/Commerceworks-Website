@@ -243,3 +243,13 @@
 }
 
 
+
+/* ---------- terms strip (static, replaced the marquee) ---------- */
+.terms{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* Twelve terms will not sit on one line at 1320px: they need about 1695px.
+   So two deliberate rows of six on a grid, which reads as designed rather
+   than as a wrap that got away. */
+.terms__row{display:grid;grid-template-columns:repeat(6,1fr);
+  gap:var(--s4) var(--s5);padding:var(--s5)}
+@media(max-width:1000px){.terms__row{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.terms__row{grid-template-columns:repeat(2,1fr)}}
