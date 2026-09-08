@@ -253,3 +253,15 @@
   gap:var(--s4) var(--s5);padding:var(--s5)}
 @media(max-width:1000px){.terms__row{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.terms__row{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- vocabulary, grouped into the four stages ---------- */
+.vgroups{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s7);margin-top:var(--s8)}
+.vgroup__no{font-size:var(--t-2xs);font-weight:800;color:var(--amber);letter-spacing:var(--tr-label)}
+.vgroup__t{margin:var(--s3) 0 var(--s1)}
+.vgroup__sub{margin:0;color:var(--muted);font-size:var(--t-s);font-style:italic}
+.vlist{list-style:none;margin:var(--s5) 0 0;padding:0}
+.vlist li{padding:var(--s3) 0;border-top:1px solid var(--line2)}
+.vlist b{display:block;font-weight:700;color:var(--ink);letter-spacing:var(--tr-tight);font-size:var(--t-sm)}
+.vlist span{display:block;margin-top:2px;color:var(--muted);font-size:var(--t-xs);line-height:1.45}
+@media(max-width:1000px){.vgroups{grid-template-columns:repeat(2,1fr);gap:var(--s6)}}
+@media(max-width:640px){.vgroups{grid-template-columns:1fr}}
