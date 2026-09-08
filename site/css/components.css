@@ -186,6 +186,12 @@
 .stack .prose{margin-top:var(--s6);max-width:var(--prose-wide)}
 .stack h2{max-width:none}
 
+/* How the work runs runs the full page width, on Virginia's instruction. */
+.ink .stack{max-width:none}
+.ink .stack .quote{max-width:none}
+.ink .stack .prose{max-width:none}
+.ink .stack .prose p{max-width:none}
+
 /* ---------- interior pages ---------- */
 .pagehead{border-bottom:1px solid var(--line);padding:var(--s8) 0 var(--s7);background:var(--white)}
 .pagehead h1{font-size:var(--t-page);max-width:14em}
