@@ -61,15 +61,15 @@
       <!-- ground line -->
       <path class="rack__ground" d="M0 560h1600"/>
       <!-- the pipe the data runs along -->
-      <!-- Humps at 30 units. The original was 40 over 9s; this is 30 over
-           16s, so the rate of vertical change is about 42% of what made
-           the earlier version unpleasant. -->
+      <!-- Back to the original: 40 units over 9s, Virginia's preference
+           after seeing the gentler versions. The reduced-motion rule in
+           motion.css still stops it for anyone who needs it to. -->
       <path id="flowline" class="rack__pipe"
-            d="M60 620H420c30 0 30-30 60-30h300c30 0 30 30 60 30h280c30 0 30-30 60-30h380"/>
+            d="M60 620H420c30 0 30-40 60-40h300c30 0 30 40 60 40h280c30 0 30-40 60-40h380"/>
       <g class="rack__pips">
-        <circle r="4"><animateMotion dur="16s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
-        <circle r="4"><animateMotion dur="16s" begin="-5.33s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
-        <circle r="4"><animateMotion dur="16s" begin="-10.66s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
+        <circle r="4"><animateMotion dur="9s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
+        <circle r="4"><animateMotion dur="9s" begin="-3s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
+        <circle r="4"><animateMotion dur="9s" begin="-6s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
       </g>
     </svg>
   </div>
