@@ -35,7 +35,7 @@
   --max:      1320px;
   --index-w:  300px;
   --build-gap:56px;
-  --panel-min:250px;   /* tallest is 04; re-measured after body copy went to 16px */
+  --panel-min:218px;   /* tallest is 04; re-measured after body copy went to 15px */
   --indent:   8px;     /* hover and selected shift on the index */
   --clientlbl:112px;   /* the CHARITIES / COMMERCIAL label column */
   --prose:    720px;
@@ -99,8 +99,8 @@
   --t-xs:    13px;     /* captions, footnotes under a stat */
   --t-s:     14px;     /* nav, footer links, secondary detail */
   --t-sm:    15px;     /* card body, marquee, list detail */
-  --t-base:  16px;     /* body */
-  --t-base-s:15.5px;     /* body below 640px */
+  --t-base:  15px;     /* body */
+  --t-base-s:15px;     /* body below 640px */
   --t-md:    18px;     /* h4, brand wordmark */
   --t-lg:    22px;     /* stat numerals in the aside */
   --t-stat:  clamp(21px, 1.6vw, 25px);   /* the proof-strip numerals */
