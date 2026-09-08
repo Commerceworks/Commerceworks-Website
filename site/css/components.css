@@ -192,9 +192,13 @@
 .ink .stack .prose p{max-width:none}
 
 /* ---------- interior pages ---------- */
-.pagehead{border-bottom:1px solid var(--line);padding:var(--s8) 0 var(--s7);background:var(--white)}
-.pagehead h1{font-size:var(--t-page);max-width:14em}
-.pagehead .lead{margin-top:var(--s4);max-width:var(--prose)}
+/* Interior page heads now match the homepage: same heading size, same body
+   size, and no white band. The white background and the larger --t-page /
+   --t-lead sizes made About and Contact read as a different site. */
+.pagehead{border-bottom:1px solid var(--line);padding:var(--s8) 0 var(--s7)}
+.pagehead h1{font-size:var(--t-sub);max-width:14em}
+.pagehead .lead{margin-top:var(--s4);max-width:var(--prose);
+  font-size:var(--t-base);line-height:1.65}
 
 .prose h2{font-size:var(--t-small);margin:var(--s7) 0 var(--s4)}
 .prose h2:first-child{margin-top:0}
