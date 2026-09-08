@@ -57,11 +57,6 @@
 .strip__t{margin-top:var(--s2);font-size:var(--t-xs);color:var(--muted);line-height:1.45}
 
 /* ---------- editorial two-column ---------- */
-/* Same column and gutter as the What we build index, via the same tokens,
-   so the two sections line up on one page grid rather than two. */
-.split{display:grid;grid-template-columns:var(--index-w) 1fr;
-  column-gap:var(--build-gap);row-gap:var(--s8)}
-.split h2{max-width:11em}
 
 /* ---------- capability cards ---------- */
 /* Four separate boxes rather than one fused block. Each card is its own
@@ -164,7 +159,7 @@
 
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
-  .hero__grid,.split,.cards,.aside,.cta__in{grid-template-columns:1fr}
+  .hero__grid,.cta__in{grid-template-columns:1fr}
   .hero__grid{gap:var(--s7)}
   .vocab{grid-template-columns:repeat(2,1fr)}
   .strip__in{grid-template-columns:repeat(2,1fr)}
@@ -186,8 +181,6 @@
 /* Drop the right column past a phantom label so its first line starts level
    with the heading, not with the eyebrow above it. Derived from the label's
    own type and margin rather than hardcoded, so it tracks if either moves. */
-.ink .split .prose{margin-top:calc(var(--t-xs) * 1.65 + var(--s5))}
-
 /* Stacked section: heading, then body beneath it, so it reads top to bottom
    like the sections below rather than splitting into two columns. */
 .stack .prose{margin-top:var(--s6);max-width:var(--prose-wide)}
