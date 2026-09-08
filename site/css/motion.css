@@ -137,11 +137,6 @@
 @keyframes drift{from{transform:translate3d(0,0,0) scale(1)}
                  to{transform:translate3d(-4%,3%,0) scale(1.1)}}
 
-/* ---------- timeline rows ---------- */
-.timeline li{transition:padding-left .3s cubic-bezier(.2,.7,.3,1)}
-.timeline li:hover{padding-left:var(--s4)}
-.timeline time{transition:letter-spacing .3s ease}
-.timeline li:hover time{letter-spacing:var(--tr-wider)}
 
 /* ---------- the one rule that makes all of this professional ---------- */
 @media (prefers-reduced-motion:reduce){

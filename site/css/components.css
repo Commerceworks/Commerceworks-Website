@@ -91,14 +91,6 @@
    Virginia's instruction. It read as a page break rather than a divider. */
 .quote{font-size:var(--t-sub);font-weight:700;letter-spacing:var(--tr-head);line-height:1.18;
   max-width:22em;color:var(--ink)}
-.timeline{margin-top:var(--s8);border-top:1px solid var(--line)}
-.timeline li:last-child{border-bottom:0;padding-bottom:0}
-/* Column narrowed from 110px: "Phase one" needed the width, "01" does not. */
-.timeline li{display:grid;grid-template-columns:48px 1fr;gap:var(--s5);
-  padding:var(--s5) 0;border-bottom:1px solid var(--line);align-items:baseline}
-.timeline time{font-size:var(--t-xs);font-weight:800;letter-spacing:var(--tr-label);color:var(--amber2)}
-.timeline p{margin:0;color:var(--muted);font-size:var(--t-sm);max-width:var(--prose-wide)}
-.timeline b{color:var(--ink);font-weight:700}
 
 /* ---------- salesforce (small, deliberately) ---------- */
 /* No card here. Dropping the box also brought this section onto the same left
@@ -172,7 +164,6 @@
   .nav{display:none}
   .vocab{grid-template-columns:1fr}
   .strip__in{grid-template-columns:1fr}
-  .timeline li{grid-template-columns:1fr;gap:var(--s2)}
   .cta__in{padding:var(--s8) var(--s5)}
   .aside{padding:var(--s6)}
 }
@@ -404,6 +395,7 @@
 /* The floor is per block, not global: these two carry different content and
    a shared value leaves dead space under the shorter one. */
 .build--sf{--panel-min:148px}
+.build--phase{--panel-min:164px}   /* measured: item 02 is tallest at 164px */
 .build__detail{min-height:var(--panel-min)}
 .build__panel[hidden]{display:none}
 .build__panel:focus-visible{outline:2px solid var(--amber);outline-offset:6px}

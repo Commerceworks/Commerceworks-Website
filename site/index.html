@@ -289,12 +289,32 @@
         of them has outlasted several of the systems it connects.</p>
       </div>
     </div>
-    <ul class="timeline">
-      <li><time>01</time><p><b>Support and stabilisation.</b> Case work on a system we did not build: orders, contracts, users, SAP exports and the file drops that keep failing at three in the morning.</p></li>
-      <li><time>02</time><p><b>Order to invoice.</b> Freight quoting, invoice point logic, COA handling, tank and stock configuration, inventory reporting and export documentation.</p></li>
-      <li><time>03</time><p><b>Reporting.</b> Power BI for rail and fleet utilisation, procurement, inventory and hedging, modelled on transaction data rather than a monthly extract.</p></li>
-      <li><time>04</time><p><b>Platform build.</b> Where the ERP was never going to reach: a Power Platform system for freight cost, purchasing and reconciliation. Thousands of hours in, still being extended.</p></li>
-    </ul>
+    <div class="build build--phase">
+      <div class="build__index" role="tablist" aria-orientation="vertical" aria-label="How the work runs">
+        <button class="build__item is-on" type="button" role="tab" id="ph-t1" aria-selected="true" aria-controls="ph-p1" tabindex="0"><span class="build__no">01</span><span class="build__title">Support and stabilisation</span></button>
+        <button class="build__item" type="button" role="tab" id="ph-t2" aria-selected="false" aria-controls="ph-p2" tabindex="-1"><span class="build__no">02</span><span class="build__title">Order to invoice</span></button>
+        <button class="build__item" type="button" role="tab" id="ph-t3" aria-selected="false" aria-controls="ph-p3" tabindex="-1"><span class="build__no">03</span><span class="build__title">Reporting</span></button>
+        <button class="build__item" type="button" role="tab" id="ph-t4" aria-selected="false" aria-controls="ph-p4" tabindex="-1"><span class="build__no">04</span><span class="build__title">Platform build</span></button>
+      </div>
+      <div class="build__detail">
+        <div class="build__panel" role="tabpanel" id="ph-p1" aria-labelledby="ph-t1" tabindex="0">
+          <h3>Support and stabilisation</h3>
+          <p>Case work on a system we did not build: orders, contracts, users, SAP exports, and the file drops that keep failing at three in the morning. We learn an estate by fixing it, which is the only way anyone learns one properly. By the end of this phase we know which interfaces are load-bearing, which have been failing quietly for a year, and which nobody has touched since the person who wrote them left.</p>
+        </div>
+        <div class="build__panel" role="tabpanel" id="ph-p2" aria-labelledby="ph-t2" tabindex="0" hidden>
+          <h3>Order to invoice</h3>
+          <p>The commercial core, and the reason we are usually still here years later. Freight quoting, invoice point logic, COA handling, tank and stock configuration, inventory reporting, and the export documentation a load cannot travel without. Every one of these sits on a live transaction with money attached, which is why mistakes here rarely announce themselves. They accumulate quietly and surface in a reconciliation months later.</p>
+        </div>
+        <div class="build__panel" role="tabpanel" id="ph-p3" aria-labelledby="ph-t3" tabindex="0" hidden>
+          <h3>Reporting</h3>
+          <p>Power BI for rail and fleet utilisation, procurement, inventory and hedging. This phase follows the last one rather than leading it, and the order matters: models built on transaction data are only worth having once the transactions themselves are trustworthy. Run it the other way round and you have automated the argument instead of ending it.</p>
+        </div>
+        <div class="build__panel" role="tabpanel" id="ph-p4" aria-labelledby="ph-t4" tabindex="0" hidden>
+          <h3>Platform build</h3>
+          <p>Where the ERP was never going to reach. Freight cost had outgrown anything the existing system could sensibly hold, so we built the thing that could: a Power Platform estate covering freight cost, purchasing and reconciliation, maintained by their team as much as ours. Thousands of hours in, still being extended and still not finished. Which is rather the point.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
