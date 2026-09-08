@@ -1,0 +1,91 @@
+/* Commerceworks — design tokens.
+   THE RULE: no colour, size or radius literal anywhere outside this file.
+   If a # appears in base.css or components.css, a token is missing here. */
+:root{
+  /* Inks — a warm near-black, not navy and not grey. This is the departure
+     from the ByzGen navy system and it is what stops the two looking related. */
+  --ink:      #14120c;
+  --ink2:     #1e1b13;
+  --ink3:     #2a251a;
+  --text:     #2b2721;
+  --muted:    #7b7365;
+  --muted2:   #a49b8b;
+
+  /* Grounds — warm white, so the yellow reads as daylight rather than hazard */
+  --paper:    #fdfbf5;
+  --paper2:   #f7f3e8;
+  --white:    #ffffff;
+
+  /* The single accent, in three jobs.
+     --yellow  fills and rules only (fails text contrast on white, by design)
+     --amber   the same hue made legible, for text and icons
+     --amber2  hover / pressed */
+  --yellow:   #ffd100;
+  --amber:    #a07400;
+  --amber2:   #7d5a00;
+  --wash:     rgba(255,209,0,.14);
+
+  /* Structure */
+  --line:      rgba(20,18,12,.11);
+  --line2:     rgba(20,18,12,.06);
+  --line-dark: rgba(255,255,255,.13);
+  --line-onyellow: rgba(20,18,12,.28);   /* outline button on the yellow panel */
+
+  /* Measure */
+  --max:      1320px;
+  --prose:    720px;
+  --prose-wide: 900px;
+
+  /* Radii */
+  --r-sm:     8px;
+  --r:        14px;
+  --r-lg:     22px;
+  --pill:     999px;
+  --circle:   50%;
+
+  /* One big soft shadow, never many small ones */
+  --shadow:   0 30px 80px rgba(20,18,12,.10);
+  --shadow-sm:0 2px 10px rgba(20,18,12,.05);
+  --shadow-bar:0 1px 20px rgba(20,18,12,.07);
+
+  /* Motion-layer colours. Here rather than in motion.css so the
+     no-literals-outside-this-file rule holds for every stylesheet. */
+  --mask:   #000;                      /* opacity carrier for mask-image, not a paint colour */
+  --glow:   rgba(255,255,255,.45);     /* cursor glow on dark buttons */
+
+  /* Spacing scale */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px;
+  --s6:32px; --s7:44px; --s8:56px; --s9:76px; --s10:96px;
+
+  /* ---- Type scale ----
+     Seven steps. Every font-size in the build resolves to one of these; if a
+     component wants an eighth, the answer is almost always that it should use
+     an existing one. The previous build had fourteen ad-hoc sizes between
+     11.5 and 26px, which is drift, not a scale. */
+  --t-2xs:   11.5px;   /* uppercase labels, pills */
+  --t-xs:    13px;     /* captions, footnotes under a stat */
+  --t-s:     14px;     /* nav, footer links, secondary detail */
+  --t-sm:    15px;     /* card body, marquee, list detail */
+  --t-base:  16px;     /* body */
+  --t-base-s:15.5px;     /* body below 640px */
+  --t-md:    18px;     /* h4, brand wordmark */
+  --t-lg:    22px;     /* stat numerals in the aside */
+  --t-stat:  clamp(26px, 2.1vw, 32px);   /* the proof-strip numerals */
+
+  /* Fluid type — the house clamp() scale, unchanged */
+  --t-hero:  clamp(36px, 3.6vw, 56px);
+  --t-page:  clamp(28px, 2.6vw, 40px);
+  --t-sub:   clamp(21px, 1.9vw, 28px);
+  --t-small: clamp(20px, 1.7vw, 25px);
+  --t-lead:  clamp(17px, 1.1vw, 19px);
+
+  /* Tracking is the signature. Tight negative on big type, wide positive on
+     small uppercase labels. Getting this wrong is what makes a copy look
+     like a copy. */
+  --tr-hero:  -.032em;   /* hero only */
+  --tr-head:  -.024em;    /* section heads, large numerals */
+  --tr-tight: -.02em;    /* mid-size UI type: brand, node labels, buttons */
+  --tr-label: .11em;     /* small uppercase labels */
+  --tr-label2:.10em;     /* the tighter of the two house label values */
+  --tr-wider: .17em;     /* hover-expanded labels only */
+}

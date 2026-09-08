@@ -1,0 +1,162 @@
+/* ============================================================
+   Motion layer. Everything here is decoration — the page is
+   fully readable and fully navigable with all of it disabled.
+   ============================================================ */
+
+/* ---------- scroll reveal ---------- */
+.js .rise{opacity:0;transform:translateY(14px);
+  transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .rise.in{opacity:1;transform:none}
+.rise.d1{transition-delay:.08s} .rise.d2{transition-delay:.16s}
+.rise.d3{transition-delay:.24s} .rise.d4{transition-delay:.32s}
+
+/* ---------- the marker draws itself in ---------- */
+.mark{background-size:100% 100%;background-repeat:no-repeat}
+.js .mark--draw{
+  background-image:linear-gradient(to top,var(--yellow) 0,var(--yellow) 42%,transparent 42%);
+  background-size:0 100%;
+  transition:background-size .75s cubic-bezier(.2,.7,.3,1) .35s;
+}
+.js .mark--draw.in{background-size:100% 100%}
+
+/* ---------- rolling banner ---------- */
+.marquee{
+  position:relative;overflow:hidden;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--white);
+  -webkit-mask-image:linear-gradient(90deg,transparent,var(--mask) 9%,var(--mask) 91%,transparent);
+          mask-image:linear-gradient(90deg,transparent,var(--mask) 9%,var(--mask) 91%,transparent);
+}
+.marquee--ink{background:var(--ink);border-color:var(--line-dark)}
+.marquee__track{display:flex;width:max-content;animation:slide 46s linear infinite}
+.marquee__track--rev{animation-direction:reverse;animation-duration:58s}
+.marquee:hover .marquee__track{animation-play-state:paused}
+.marquee__set{display:flex;align-items:center;gap:var(--s6);padding:var(--s5) var(--s4)}
+@keyframes slide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+.mq{display:inline-flex;align-items:center;gap:var(--s3);white-space:nowrap;
+  font-size:var(--t-sm);font-weight:700;letter-spacing:var(--tr-tight);color:var(--ink)}
+.mq::before{content:"";width:6px;height:6px;border-radius:var(--circle);background:var(--yellow);flex:none}
+.marquee--ink .mq{color:var(--white)}
+.mq em{font-style:normal;font-weight:500;color:var(--muted);font-size:var(--t-s)}
+.marquee--ink .mq em{color:var(--muted2)}
+
+/* ---------- popping pills ---------- */
+.tag{
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1),
+             background .22s ease,border-color .22s ease,box-shadow .22s ease;
+  will-change:transform;
+}
+.tag:hover{transform:translateY(-3px) scale(1.05);background:var(--yellow);
+  border-color:var(--yellow);box-shadow:0 6px 16px var(--wash)}
+/* staggered entrance — set per-pill by JS via --i */
+.js .card__list .tag{opacity:0;transform:translateY(10px) scale(.94)}
+.js .card__list.in .tag{opacity:1;transform:none;
+  transition:opacity .45s ease calc(var(--i)*45ms),
+             transform .5s cubic-bezier(.34,1.56,.64,1) calc(var(--i)*45ms)}
+
+/* ---------- hero pill cloud ---------- */
+.cloud{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s6)}
+.cloud .tag{animation:bob 5.5s ease-in-out infinite;animation-delay:calc(var(--i)*-.55s)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.cloud .tag:hover{animation-play-state:paused}
+
+/* ---------- cards: lift + yellow sweep ---------- */
+.card{overflow:hidden}
+.card::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:var(--yellow);transform:scaleX(0);transform-origin:0 50%;
+  transition:transform .45s cubic-bezier(.2,.7,.3,1);
+}
+.card:hover::after{transform:scaleX(1)}
+.card{transition:background .25s ease,transform .35s cubic-bezier(.2,.7,.3,1)}
+.card:hover{transform:translateY(-4px)}
+.card__no{transition:color .25s ease,letter-spacing .25s ease}
+.card:hover .card__no{letter-spacing:var(--tr-wider)}
+
+/* ---------- the pipeline: the showpiece ---------- */
+.pipe{padding:var(--s6) 0 var(--s8)}
+.pipe__track{position:relative;display:grid;grid-template-columns:repeat(5,1fr);
+  align-items:start;margin-top:var(--s8)}
+.pipe__line{position:absolute;left:10%;right:10%;top:19px;height:2px;
+  background:var(--line-dark);overflow:visible}
+.pipe__flow{position:absolute;top:-3px;left:0;width:8px;height:8px;border-radius:var(--circle);
+  background:var(--yellow);box-shadow:0 0 0 4px var(--wash);
+  animation:flow 4.2s linear infinite;animation-delay:calc(var(--i)*-1.05s)}
+@keyframes flow{from{left:0;opacity:0}8%{opacity:1}92%{opacity:1}to{left:100%;opacity:0}}
+.node{text-align:center;position:relative;z-index:1}
+.node__dot{width:40px;height:40px;border-radius:var(--circle);margin:0 auto var(--s4);
+  background:var(--ink2);border:2px solid var(--line-dark);
+  display:grid;place-items:center;font-size:var(--t-xs);font-weight:800;color:var(--yellow);
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1),border-color .3s ease,background .3s ease}
+.node:hover .node__dot{transform:scale(1.14);border-color:var(--yellow);background:var(--yellow);color:var(--ink)}
+.node b{display:block;font-size:var(--t-s);color:var(--white);letter-spacing:var(--tr-tight)}
+.node span{display:block;font-size:var(--t-xs);color:var(--muted2);margin-top:var(--s1);padding:0 var(--s3)}
+
+/* ---------- counting numerals ---------- */
+.strip__n{font-variant-numeric:tabular-nums}
+.strip__cell{position:relative;transition:background .3s ease}
+.strip__cell:hover{background:var(--paper)}
+.strip__cell::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--yellow);transform:scaleY(0);transform-origin:50% 100%;
+  transition:transform .35s cubic-bezier(.2,.7,.3,1)}
+.strip__cell:hover::before{transform:scaleY(1)}
+
+/* ---------- vocabulary rows wake on hover ---------- */
+.vocab li{transition:padding-left .28s cubic-bezier(.2,.7,.3,1),border-color .28s ease}
+.vocab li:hover{padding-left:var(--s3);border-color:var(--yellow)}
+.vocab li b{transition:color .28s ease}
+.vocab li:hover b{color:var(--amber)}
+
+/* ---------- buttons ---------- */
+.btn{position:relative;overflow:hidden}
+.btn--primary::after,.btn--dark::after{
+  content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),
+  var(--glow),transparent 55%);opacity:0;transition:opacity .3s ease}
+.btn--primary:hover::after,.btn--dark:hover::after{opacity:1}
+.btn--primary:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 10px 26px var(--wash)}
+.btn--ghost:hover{transform:translateY(-2px)}
+.btn span.arrow{display:inline-block;transition:transform .28s cubic-bezier(.34,1.56,.64,1)}
+.btn:hover span.arrow{transform:translateX(4px)}
+
+/* ---------- sticky bar shrinks ---------- */
+.bar{transition:height .3s ease,box-shadow .3s ease,background .3s ease}
+.bar__in{transition:height .3s cubic-bezier(.2,.7,.3,1)}
+.bar.small .bar__in{height:58px}
+.bar.small{box-shadow:var(--shadow-bar)}
+.brand__dot{transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.bar:hover .brand__dot{transform:scale(1.35)}
+.nav a{position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;
+  background:var(--yellow);transform:scaleX(0);transform-origin:0 50%;
+  transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.nav a:hover::after{transform:scaleX(1)}
+
+/* ---------- hero wash drifts ---------- */
+.hero::after{animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}
+                 to{transform:translate3d(-4%,3%,0) scale(1.1)}}
+
+/* ---------- timeline rows ---------- */
+.timeline li{transition:padding-left .3s cubic-bezier(.2,.7,.3,1)}
+.timeline li:hover{padding-left:var(--s4)}
+.timeline time{transition:letter-spacing .3s ease}
+.timeline li:hover time{letter-spacing:var(--tr-wider)}
+
+/* ---------- the one rule that makes all of this professional ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .rise{opacity:1;transform:none}
+  .card__list .tag{opacity:1;transform:none}
+  .mark--draw{background-size:100% 100%}
+}
+
+@media (max-width:1000px){
+  .pipe__track{grid-template-columns:1fr;gap:var(--s6);}
+  .pipe__line{display:none}
+  .node{display:grid;grid-template-columns:40px 1fr;gap:var(--s4);text-align:left;align-items:center}
+  .node__dot{margin:0}
+  .node span{padding:0}
+}

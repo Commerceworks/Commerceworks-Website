@@ -1,0 +1,6 @@
+# Never commit client data. The time-log analysis and anything derived from it
+# lives outside version control - see README.
+*.csv
+docs/
+research/
+*time-logged*
