@@ -200,7 +200,7 @@
   position:relative;
   min-height:var(--hero-h);
   display:flex; align-items:center;
-  padding:var(--s9) 0 var(--s9);
+  padding:var(--s7) 0 var(--hero-floor);
   background:
     radial-gradient(120% 70% at 50% 100%, var(--dusk-glow) 0%, transparent 62%),
     linear-gradient(180deg, var(--dusk-top) 0%, var(--dusk-mid) 52%, var(--dusk-low) 100%);
