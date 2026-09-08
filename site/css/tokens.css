@@ -64,7 +64,7 @@
      Commerceworks owns no terminals to photograph, so the hero ground is drawn,
      not shot. A dusk gradient built from the ink ramp, with a line schematic of
      a loading rack over it. Honest: the drawing is ours, the assets aren't. */
-  --hero-h:      clamp(470px, 60vh, 610px);
+  --hero-h:      clamp(540px, 70vh, 700px);
   --dusk-top:    #0b0a07;
   --dusk-mid:    #1a1610;
   --dusk-low:    #3b3020;
@@ -74,7 +74,7 @@
   --on-ink:      rgba(255,255,255,.94);
   --on-ink2:     rgba(255,255,255,.62);
   --on-ink3:     rgba(255,255,255,.40);
-  --hero-floor:  150px;   /* keeps the copy clear of the flow line */
+  --hero-floor:  190px;   /* keeps the copy clear of the flow line */
   --logo-h:      52px;                  /* how far the deck straddles the hero */
   --t-deck:      clamp(15px, 1.05vw, 17px);
 
