@@ -21,9 +21,12 @@ img{max-width:100%;display:block}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--s5)}
 .prose{max-width:var(--prose)}
 .prose-wide{max-width:var(--prose-wide)}
-.section{padding:var(--s9) 0}
-.section--ink{padding:var(--s9) 0}
-.section--tight{padding:var(--s8) 0}
+/* padding-block, not the shorthand. The shorthand zeroed the horizontal
+   padding on any element that is both .section and .wrap, which is what
+   gave the page three different left edges. */
+.section{padding-block:var(--s9)}
+.section--ink{padding-block:var(--s9)}
+.section--tight{padding-block:var(--s8)}
 .rule{height:1px;background:var(--line);border:0;margin:0}
 
 /* Small wide-tracked label, the counterweight to the tight headlines */

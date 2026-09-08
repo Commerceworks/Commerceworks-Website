@@ -223,14 +223,19 @@
 .rack__pipe{stroke:var(--schematic2);stroke-width:1.5;opacity:.8}
 .rack__pips circle{fill:var(--yellow)}
 
-.hero__in{position:relative}
+/* The hero grid is a flex item, so it was sized by its content and floated
+   in the middle rather than filling the page column. That is why the hero
+   copy started 250px right of every section below it, and why narrowing the
+   lead squeezed the facts column into three lines. */
+.hero__in{position:relative;width:100%}
 .hero__h{
   color:var(--on-ink);
   font-size:var(--t-sub); letter-spacing:var(--tr-hero);
   font-weight:500;            /* light, per Vista, ours was 800 and shouting */
   line-height:1.04; margin:var(--s5) 0 0; max-width:16em;
 }
-.hero__lead{color:var(--on-ink2);max-width:32em;margin-top:var(--s5)}
+.hero__lead{color:var(--on-ink2);max-width:32em;margin-top:var(--s5);
+  font-size:var(--t-base);line-height:1.65}   /* size and leading matched to the body copy in The gap */
 .label--on-ink{color:var(--on-ink)}   /* matched to the facts text opposite; dash stays full yellow */
 
 /* ---- Clients: named quietly, no logo wall ---- */
