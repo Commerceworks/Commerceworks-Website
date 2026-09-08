@@ -61,11 +61,11 @@
       <!-- ground line -->
       <path class="rack__ground" d="M0 560h1600"/>
       <!-- the pipe the data runs along -->
-      <!-- Humps restored, but at 16 units instead of 40. On screen that is
-           about 9px of rise against the original 22px, and over 16s rather
-           than 9s, so the dots read as gently undulating rather than lurching. -->
+      <!-- Humps at 30 units. The original was 40 over 9s; this is 30 over
+           16s, so the rate of vertical change is about 42% of what made
+           the earlier version unpleasant. -->
       <path id="flowline" class="rack__pipe"
-            d="M60 620H420c30 0 30-16 60-16h300c30 0 30 16 60 16h280c30 0 30-16 60-16h380"/>
+            d="M60 620H420c30 0 30-30 60-30h300c30 0 30 30 60 30h280c30 0 30-30 60-30h380"/>
       <g class="rack__pips">
         <circle r="4"><animateMotion dur="16s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
         <circle r="4"><animateMotion dur="16s" begin="-5.33s" repeatCount="indefinite"><mpath href="#flowline"/></animateMotion></circle>
