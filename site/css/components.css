@@ -115,16 +115,16 @@
   color:var(--muted);font-size:var(--t-sm);line-height:1.9}
 .skills span{color:var(--muted2);padding:0 var(--s1)}
 
-/* Client lines: label held in its own column so both rows align. */
-.aside__clients{margin-top:var(--s6);display:grid;gap:var(--s4)}
-.clientline{margin:0;display:grid;grid-template-columns:var(--clientlbl) 1fr;
-  gap:var(--s4);align-items:baseline;
-  color:var(--ink);font-size:var(--t-sm);letter-spacing:var(--tr-tight)}
-.clientline > span{font-size:var(--t-2xs);font-weight:700;text-transform:uppercase;
-  letter-spacing:var(--tr-label);color:var(--muted)}
-@media(max-width:640px){
-  .clientline{grid-template-columns:1fr;gap:var(--s1)}
-}
+/* Customers, grouped. Two columns side by side rather than one after the
+   other, so the block stays compact and fills the card. */
+.aside__clients{margin-top:var(--s7)}
+.cgroups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s7);margin-top:var(--s5)}
+.cgroup h4{font-size:var(--t-2xs);font-weight:700;text-transform:uppercase;
+  letter-spacing:var(--tr-label);color:var(--muted);margin:0}
+.cgroup ul{list-style:none;margin:var(--s4) 0 0;padding:0;display:grid;gap:var(--s3)}
+.cgroup li{color:var(--ink);font-size:var(--t-sm);font-weight:600;
+  letter-spacing:var(--tr-tight);border-left:2px solid var(--yellow);padding-left:var(--s4)}
+@media(max-width:640px){.cgroups{grid-template-columns:1fr;gap:var(--s6)}}
 
 /* ---------- cta ---------- */
 .cta{background:var(--paper2);border:1px solid var(--line2);border-radius:var(--r-lg)}
