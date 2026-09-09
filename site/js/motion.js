@@ -17,6 +17,24 @@
     Array.prototype.forEach.call(targets, function (el) { io.observe(el); });
   }
 
+  /* ---- hero drawing: fit, do not crop, on a phone ------------------------
+     The rack is authored 1600x700 and set to "slice", which covers the box and
+     crops the overflow. On a 375px screen that scales the drawing to 988px and
+     throws away roughly 62% of the flow line, so the travelling dots are off
+     screen for most of their nine seconds. Below 700px switch to "meet" so the
+     whole pipeline fits the width and the movement is actually visible. */
+  (function () {
+    var rack = document.querySelector('.hero__rack');
+    if (!rack) return;
+    var narrow = window.matchMedia('(max-width: 700px)');
+    var apply = function () {
+      rack.setAttribute('preserveAspectRatio',
+        narrow.matches ? 'xMidYMax meet' : 'xMidYMax slice');
+    };
+    apply();
+    if (narrow.addEventListener) narrow.addEventListener('change', apply);
+  }());
+
   /* ---- stagger index for pills ----------------------------------------- */
   Array.prototype.forEach.call(document.querySelectorAll('.card__list, .cloud'), function (list) {
     Array.prototype.forEach.call(list.children, function (pill, i) {
