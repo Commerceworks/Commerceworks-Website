@@ -154,8 +154,10 @@
   .pipe__track{grid-template-columns:1fr;gap:var(--s6);}
   .pipe__line{display:none}
   .node{display:grid;grid-template-columns:40px 1fr;gap:var(--s4);text-align:left;align-items:center}
-  .node__dot{margin:0}
-  .node span{padding:0}
+  .node__dot{grid-row:span 2;align-self:start;margin:0}
+  /* The caption is the third grid item, so it was dropping into the 40px dot
+     column and wrapping one word per line. Put it under the title instead. */
+  .node span{grid-column:2;padding:0}
 }
 
 /* Motion sickness guard. SVG animateMotion is not covered by the CSS
